@@ -1,0 +1,144 @@
+.navbar {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .active {
+    padding-bottom: 2px;
+    border-bottom: 1px solid #49557e;
+  }
+
+  &__logo {
+    width: 200px;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18px;
+
+    & li {
+      cursor: pointer;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &-icon {
+      position: relative;
+
+      &--dot {
+        position: absolute;
+        min-width: 10px;
+        min-height: 10px;
+        background-color: tomato;
+        border-radius: 50%;
+        top: -5px;
+        right: -5px;
+      }
+    }
+
+    & button {
+      background: transparent;
+      font-size: 16px;
+      color: #49557e;
+      border: 1px solid tomato;
+      padding: 10px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    & button:hover {
+      background-color: #fff4f2;
+    }
+  }
+}
+@media (max-width: 1050px) {
+  .navbar {
+    &__logo {
+      width: 140px;
+    }
+    &__menu {
+      gap: 20px;
+      font-size: 17px;
+    }
+    &__right {
+      gap: 30px;
+
+      & button {
+        padding: 8px 25px;
+        font-size: 15px;
+      }
+
+      & img {
+        width: 22px;
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .navbar {
+    &__logo {
+      width: 120px;
+    }
+    &__menu {
+      gap: 15px;
+      font-size: 16px;
+    }
+    &__right {
+      gap: 20px;
+
+      & button {
+        padding: 7px 20px;
+        font-size: 15px;
+      }
+
+      & img {
+        width: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .navbar{
+
+    &__menu {
+      display: none;
+    }
+  }
+}
+/* Navbar.scss */
+
+.navbar__profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .navbar__profile-text {
+    cursor: pointer;
+  }
+
+  .navbar__profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  &:hover .navbar__profile-dropdown {
+    display: block;
+  }
+}

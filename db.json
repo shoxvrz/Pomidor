@@ -1,0 +1,476 @@
+{
+  "foodData": [
+    {
+      "_id": "1",
+      "name": "Greek salad",
+      "image": "http://localhost:5173/src/assets/food_1.png",
+      "price": 12,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Salad",
+      "id": "3b0e"
+    },
+    {
+      "_id": "2",
+      "name": "Veg salad",
+      "image": "http://localhost:5173/src/assets/food_2.png",
+      "price": 18,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Salad",
+      "id": "68bf"
+    },
+    {
+      "_id": "3",
+      "name": "Clover Salad",
+      "image": "http://localhost:5173/src/assets/food_3.png",
+      "price": 16,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Salad",
+      "id": "efd4"
+    },
+    {
+      "_id": "4",
+      "name": "Chicken Salad",
+      "image": "http://localhost:5173/src/assets/food_4.png",
+      "price": 24,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Salad",
+      "id": "cf01"
+    },
+    {
+      "_id": "5",
+      "name": "Lasagna Rolls",
+      "image": "http://localhost:5173/src/assets/food_5.png",
+      "price": 14,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Rolls",
+      "id": "9d09"
+    },
+    {
+      "_id": "6",
+      "name": "Peri Peri Rolls",
+      "image": "http://localhost:5173/src/assets/food_6.png",
+      "price": 12,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Rolls",
+      "id": "db94"
+    },
+    {
+      "_id": "7",
+      "name": "Chicken Rolls",
+      "image": "http://localhost:5173/src/assets/food_7.png",
+      "price": 20,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Rolls",
+      "id": "cb00"
+    },
+    {
+      "_id": "8",
+      "name": "Veg Rolls",
+      "image": "http://localhost:5173/src/assets/food_8.png",
+      "price": 15,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Rolls",
+      "id": "ef30"
+    },
+    {
+      "_id": "9",
+      "name": "Ripple Ice Cream",
+      "image": "http://localhost:5173/src/assets/food_9.png",
+      "price": 14,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Deserts",
+      "id": "28e8"
+    },
+    {
+      "_id": "10",
+      "name": "Fruit Ice Cream",
+      "image": "http://localhost:5173/src/assets/food_10.png",
+      "price": 22,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Deserts",
+      "id": "85d2"
+    },
+    {
+      "_id": "11",
+      "name": "Jar Ice Cream",
+      "image": "http://localhost:5173/src/assets/food_11.png",
+      "price": 10,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Deserts",
+      "id": "93c8"
+    },
+    {
+      "_id": "12",
+      "name": "Vanilla Ice Cream",
+      "image": "http://localhost:5173/src/assets/food_12.png",
+      "price": 12,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Deserts",
+      "id": "eecb"
+    },
+    {
+      "_id": "13",
+      "name": "Chicken Sandwich",
+      "image": "http://localhost:5173/src/assets/food_13.png",
+      "price": 12,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Sandwich",
+      "id": "270e"
+    },
+    {
+      "_id": "14",
+      "name": "Vegan Sandwich",
+      "image": "http://localhost:5173/src/assets/food_14.png",
+      "price": 18,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Sandwich",
+      "id": "1727"
+    },
+    {
+      "_id": "15",
+      "name": "Grilled Sandwich",
+      "image": "http://localhost:5173/src/assets/food_15.png",
+      "price": 16,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Sandwich",
+      "id": "c92a"
+    },
+    {
+      "_id": "16",
+      "name": "Bread Sandwich",
+      "image": "http://localhost:5173/src/assets/food_16.png",
+      "price": 24,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Sandwich",
+      "id": "f22b"
+    },
+    {
+      "_id": "17",
+      "name": "Cup Cake",
+      "image": "http://localhost:5173/src/assets/food_17.png",
+      "price": 14,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Cake",
+      "id": "c950"
+    },
+    {
+      "_id": "18",
+      "name": "Vegan Cake",
+      "image": "http://localhost:5173/src/assets/food_18.png",
+      "price": 12,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Cake",
+      "id": "55e1"
+    },
+    {
+      "_id": "19",
+      "name": "Butterscotch Cake",
+      "image": "http://localhost:5173/src/assets/food_19.png",
+      "price": 20,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Cake",
+      "id": "0243"
+    },
+    {
+      "_id": "20",
+      "name": "Sliced Cake",
+      "image": "http://localhost:5173/src/assets/food_20.png",
+      "price": 15,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Cake",
+      "id": "4fcc"
+    },
+    {
+      "_id": "21",
+      "name": "Garlic Mushroom ",
+      "image": "http://localhost:5173/src/assets/food_21.png",
+      "price": 14,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Pure Veg",
+      "id": "23e5"
+    },
+    {
+      "_id": "22",
+      "name": "Fried Cauliflower",
+      "image": "http://localhost:5173/src/assets/food_22.png",
+      "price": 22,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Pure Veg",
+      "id": "10c5"
+    },
+    {
+      "_id": "23",
+      "name": "Mix Veg Pulao",
+      "image": "http://localhost:5173/src/assets/food_23.png",
+      "price": 10,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Pure Veg",
+      "id": "b182"
+    },
+    {
+      "_id": "24",
+      "name": "Rice Zucchini",
+      "image": "http://localhost:5173/src/assets/food_24.png",
+      "price": 12,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Pure Veg",
+      "id": "02f1"
+    },
+    {
+      "_id": "25",
+      "name": "Cheese Pasta",
+      "image": "http://localhost:5173/src/assets/food_25.png",
+      "price": 12,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Pasta",
+      "id": "2325"
+    },
+    {
+      "_id": "26",
+      "name": "Tomato Pasta",
+      "image": "http://localhost:5173/src/assets/food_26.png",
+      "price": 18,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Pasta",
+      "id": "6411"
+    },
+    {
+      "_id": "28",
+      "name": "Chicken Pasta",
+      "image": "http://localhost:5173/src/assets/food_28.png",
+      "price": 24,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Pasta",
+      "id": "5164"
+    },
+    {
+      "_id": "29",
+      "name": "Buttter Noodles",
+      "image": "http://localhost:5173/src/assets/food_29.png",
+      "price": 14,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Noodles",
+      "id": "8146"
+    },
+    {
+      "_id": "30",
+      "name": "Veg Noodles",
+      "image": "http://localhost:5173/src/assets/food_30.png",
+      "price": 12,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Noodles",
+      "id": "9e83"
+    },
+    {
+      "_id": "31",
+      "name": "Somen Noodles",
+      "image": "http://localhost:5173/src/assets/food_31.png",
+      "price": 20,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Noodles",
+      "id": "1bd1"
+    },
+    {
+      "_id": "32",
+      "name": "Cooked Noodles",
+      "image": "http://localhost:5173/src/assets/food_32.png",
+      "price": 15,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Noodles",
+      "id": "5d06"
+    },
+    {
+      "_id": "33",
+      "name": "Milliy Osh",
+      "image": "http://localhost:5173/src/assets/food_33.jpg",
+      "price": 30,
+      "description": "Food provides essential nutrients for overall health and well-being",
+      "category": "Noodles",
+      "id": "112c"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Shoxruz",
+      "email": "sh@gmail.com",
+      "password": "1234adsasdasd"
+    },
+    {
+      "id": "8957",
+      "name": "asdasdad",
+      "email": "sh@gmail.com",
+      "password": "sadcasdaedad"
+    },
+    {
+      "id": "1570",
+      "name": "asdasdad",
+      "email": "sh@gmail.com",
+      "password": "sadcasdaedad"
+    },
+    {
+      "id": "9550",
+      "name": "asdasdasd",
+      "email": "asdasdasd@gmail.com",
+      "password": "asdasdasd"
+    },
+    {
+      "id": "44af",
+      "name": "Shuxruz",
+      "email": "ghfhjkgfghdcgbvc@gma",
+      "password": "hjdhgfghjjhhjhj"
+    },
+    {
+      "id": "4583",
+      "name": "asdascdasd",
+      "email": "sasdasdh@gmail.com",
+      "password": "asdcasdcasda"
+    },
+    {
+      "id": "42fa",
+      "name": "asdascdasd",
+      "email": "sasdasdh@gmail.com",
+      "password": "asdcasdcasda"
+    },
+    {
+      "id": "7642",
+      "name": "asdascdasd",
+      "email": "sasdasdh@gmail.com",
+      "password": "asdcasdcasda"
+    },
+    {
+      "id": "0011",
+      "name": "asdascdasd",
+      "email": "sasdasdh@gmail.com",
+      "password": "asdcasdcasda"
+    },
+    {
+      "id": "7d93",
+      "name": "asdascdasd",
+      "email": "sasdasdh@gmail.com",
+      "password": "asdcasdcasda"
+    },
+    {
+      "id": "1155",
+      "name": "asdacdacd",
+      "email": "shoxruzabdurasulov7@gmail.com",
+      "password": "asdcasdcasd"
+    },
+    {
+      "id": "02fc",
+      "name": "asdasd",
+      "email": "saasdh@gmail.com",
+      "password": "asdasdasd"
+    },
+    {
+      "id": "204a",
+      "name": "Shuxruz",
+      "email": "a@gmail.com",
+      "password": "1234qwer"
+    },
+    {
+      "id": "c751",
+      "name": "Shoxruz",
+      "email": "sh7@gmail.com",
+      "password": "1234Qwerty@"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ec8f",
+      "name": "",
+      "surname": "",
+      "email": "",
+      "street": "",
+      "city": "",
+      "tuman": "",
+      "postcode": "",
+      "country": "",
+      "telNomer": ""
+    },
+    {
+      "id": "0428",
+      "name": "asdasd",
+      "surname": "asdasd",
+      "email": "sadas",
+      "street": "dasdas",
+      "city": "dasdas",
+      "tuman": "dasdas",
+      "postcode": "dasdas",
+      "country": "dasdas",
+      "telNomer": "dasdasd"
+    },
+    {
+      "id": "b17d",
+      "name": "",
+      "surname": "",
+      "email": "",
+      "street": "",
+      "city": "",
+      "tuman": "",
+      "postcode": "",
+      "country": "",
+      "telNomer": ""
+    },
+    {
+      "id": "6b37",
+      "name": "sdas",
+      "surname": "dasdas",
+      "email": "dasdas@gmail.com",
+      "street": "asdas",
+      "city": "dasd",
+      "tuman": "asdas",
+      "postcode": "dasdasd",
+      "country": "das",
+      "telNomer": "sadasd"
+    },
+    {
+      "id": "51e8",
+      "name": "sdas",
+      "surname": "dasdas",
+      "email": "dasdas@gmail.com",
+      "street": "asdas",
+      "city": "dasd",
+      "tuman": "asdas",
+      "postcode": "dasdasd",
+      "country": "das",
+      "telNomer": "sadasd"
+    },
+    {
+      "id": "633b",
+      "name": "asdas",
+      "surname": "dsad",
+      "email": "sdasd@gmail.com",
+      "street": "asd",
+      "city": "asdas",
+      "tuman": "dasd",
+      "postcode": "dasd",
+      "country": "asdas",
+      "telNomer": "dasd"
+    },
+    {
+      "id": "7b3a",
+      "name": "asdasd",
+      "surname": "asdas",
+      "email": "dasd@gmail.com",
+      "street": "asdasd",
+      "city": "asdas",
+      "tuman": "dasdas",
+      "postcode": "dasd",
+      "country": "asdsa",
+      "telNomer": "dasdasd"
+    },
+    {
+      "id": "51e8",
+      "name": "asdasd",
+      "surname": "asdas",
+      "email": "dasd@gmail.com",
+      "street": "asdasd",
+      "city": "asdas",
+      "tuman": "dasdas",
+      "postcode": "dasd",
+      "country": "asdsa",
+      "telNomer": "dasdasd"
+    }
+  ]
+}

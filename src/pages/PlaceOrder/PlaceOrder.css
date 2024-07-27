@@ -1,0 +1,52 @@
+.placeOrder {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 100px;
+}
+.placeOrder__right {
+  width: 100%;
+  max-width: max(40%, 500px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.placeOrder__right button {
+  border: none;
+  color: #fff;
+  background: tomato;
+  width: max(15vw, 200px);
+  padding: 12px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.placeOrder__right-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555;
+}
+.placeOrder__left {
+  width: 100%;
+  max-width: max(30%, 500px);
+}
+.placeOrder__left-multiFields {
+  display: flex;
+  gap: 10px;
+}
+.placeOrder__left-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.placeOrder__left input {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+  outline-color: tomato;
+}/*# sourceMappingURL=PlaceOrder.css.map */

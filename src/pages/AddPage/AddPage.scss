@@ -1,0 +1,79 @@
+.add {
+  width: 70%;
+  margin-left: max(5vw, 25px);
+  margin-top: 50px;
+  color: #6d6d6d;
+  font-size: 16px;
+  gap: 20px;
+
+
+  &__container {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__productName,
+  &__productDescription{
+    width: max(40%, 280px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & input {
+      padding: 10px;
+    }
+
+    & textarea {
+      padding: 10px;
+    }
+  }
+  & button {
+    max-width: 120px;
+    border: none;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  &__categoryPrice {
+    display: flex;
+    gap: 30px;
+
+    & select,
+    input {
+      max-width: 120px;
+      padding: 10px;
+    }
+
+    &--price {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      & select,
+      input {
+        max-width: 120px;
+        padding: 10px;
+      }
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--category {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

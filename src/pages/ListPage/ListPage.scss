@@ -1,0 +1,39 @@
+.list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    &__title{
+        font-size: 22px;   
+    }
+
+    &__table{
+        padding: 0px;
+        margin: auto auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &-format{
+            display: grid;
+            grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+            align-items: center;
+            justify-items: center;
+            padding: 12px 15px;
+            border: 1px solid #cacaca;
+            font-size: 13px;
+        
+            & .title{
+                background-color: #f9f9f9;
+            }
+
+            & img{
+                width: 50px;
+            }
+        }
+
+    }
+}

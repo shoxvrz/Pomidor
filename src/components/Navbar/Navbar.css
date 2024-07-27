@@ -1,0 +1,121 @@
+.navbar {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .active {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #49557e;
+}
+.navbar__logo {
+  width: 200px;
+}
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  color: #49557e;
+  font-size: 18px;
+}
+.navbar__menu li {
+  cursor: pointer;
+}
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.navbar__right-icon {
+  position: relative;
+}
+.navbar__right-icon--dot {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  background-color: tomato;
+  border-radius: 50%;
+  top: -5px;
+  right: -5px;
+}
+.navbar__right button {
+  background: transparent;
+  font-size: 16px;
+  color: #49557e;
+  border: 1px solid tomato;
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.navbar__right button:hover {
+  background-color: #fff4f2;
+}
+
+@media (max-width: 1050px) {
+  .navbar__logo {
+    width: 140px;
+  }
+  .navbar__menu {
+    gap: 20px;
+    font-size: 17px;
+  }
+  .navbar__right {
+    gap: 30px;
+  }
+  .navbar__right button {
+    padding: 8px 25px;
+    font-size: 15px;
+  }
+  .navbar__right img {
+    width: 22px;
+  }
+}
+@media (max-width: 900px) {
+  .navbar__logo {
+    width: 120px;
+  }
+  .navbar__menu {
+    gap: 15px;
+    font-size: 16px;
+  }
+  .navbar__right {
+    gap: 20px;
+  }
+  .navbar__right button {
+    padding: 7px 20px;
+    font-size: 15px;
+  }
+  .navbar__right img {
+    width: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .navbar__menu {
+    display: none;
+  }
+}
+/* Navbar.scss */
+.navbar__profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.navbar__profile .navbar__profile-text {
+  cursor: pointer;
+}
+.navbar__profile .navbar__profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.navbar__profile:hover .navbar__profile-dropdown {
+  display: block;
+}/*# sourceMappingURL=Navbar.css.map */

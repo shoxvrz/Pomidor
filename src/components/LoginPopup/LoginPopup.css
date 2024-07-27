@@ -1,0 +1,92 @@
+.login {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5647058824);
+  display: grid;
+}
+.login__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.login__profile--title .titleText {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 500;
+  color: #49557e;
+}
+.login__profile--info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 15px;
+}
+.login__profile--info p {
+  font-size: 22px;
+  color: black;
+}
+.login__profile button {
+  width: 100%;
+}
+.login__condition {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  margin-top: -15px;
+}
+.login__condition input {
+  margin-top: 5px;
+}
+.login p span {
+  color: tomato;
+  font-weight: 500;
+  cursor: pointer;
+}
+.login__container {
+  place-self: center;
+  width: max(23vw, 330px);
+  color: #808080;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  animation: fadeIn 0.5s;
+}
+.login__container button {
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  color: #fff;
+  background: tomato;
+  font-size: 15px;
+  cursor: pointer;
+}
+.login__title {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  align-items: center;
+}
+.login__title img {
+  width: 16px;
+  cursor: pointer;
+}
+.login__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.login__inputs input {
+  outline: none;
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #c9c9c9;
+}/*# sourceMappingURL=LoginPopup.css.map */

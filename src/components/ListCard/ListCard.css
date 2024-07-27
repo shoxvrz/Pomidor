@@ -1,0 +1,11 @@
+.listCard {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  padding: 12px 15px;
+}
+.listCard img {
+  width: 50px;
+}/*# sourceMappingURL=ListCard.css.map */

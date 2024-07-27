@@ -1,0 +1,68 @@
+.add {
+  width: 70%;
+  margin-left: max(5vw, 25px);
+  margin-top: 50px;
+  color: #6d6d6d;
+  font-size: 16px;
+  gap: 20px;
+}
+.add__container {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.add__image {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add__productName, .add__productDescription {
+  width: max(40%, 280px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add__productName input, .add__productDescription input {
+  padding: 10px;
+}
+.add__productName textarea, .add__productDescription textarea {
+  padding: 10px;
+}
+.add button {
+  max-width: 120px;
+  border: none;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.add__categoryPrice {
+  display: flex;
+  gap: 30px;
+}
+.add__categoryPrice select,
+.add__categoryPrice input {
+  max-width: 120px;
+  padding: 10px;
+}
+.add__categoryPrice--price {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.add__categoryPrice--price select,
+.add__categoryPrice--price input {
+  max-width: 120px;
+  padding: 10px;
+}
+.add__categoryPrice--category {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=AddPage.css.map */
