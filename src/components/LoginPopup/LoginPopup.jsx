@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { login, signup, logout } from '../../toolkit/auth/authSlice';
+import { useDispatch, useSelector } from "react-redux";
+import { login, signup, logout } from "../../toolkit/auth/authSlice";
 import { assets } from "../../assets/assets";
-import './LoginPopup.scss';
+import "./LoginPopup.scss";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const LoginPopup = ({ setShowLogin }) => {
   const dispatch = useDispatch();
   const { user, status, error } = useSelector((state) => state.auth);
-  const [currState, setCurrState] = useState(user ? 'Profile' : 'Sign Up');
+  const [currState, setCurrState] = useState(user ? "Profile" : "Sign Up");
   const [inputData, setInputData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    agreement: false
+    name: "",
+    email: "",
+    password: "",
+    agreement: false,
   });
 
   useEffect(() => {
     if (user) {
-      setCurrState('Profile');
+      setCurrState("Profile");
     } else {
-      setCurrState('Sign Up');
+      setCurrState("Sign Up");
     }
   }, [user]);
 
@@ -29,10 +30,10 @@ const LoginPopup = ({ setShowLogin }) => {
 
   const inputHandler = (e) => {
     const { name, type, value, checked } = e.target;
-    const finalValue = type === 'checkbox' ? checked : value;
-    setInputData(prev => ({
+    const finalValue = type === "checkbox" ? checked : value;
+    setInputData((prev) => ({
       ...prev,
-      [name]: finalValue
+      [name]: finalValue,
     }));
   };
 
@@ -42,17 +43,19 @@ const LoginPopup = ({ setShowLogin }) => {
       dispatch(login({ email: inputData.email, password: inputData.password }));
     } else if (currState === "Sign Up") {
       if (inputData.agreement) {
-        dispatch(signup({
-          name: inputData.name,
-          email: inputData.email,
-          password: inputData.password
-        }));
+        dispatch(
+          signup({
+            name: inputData.name,
+            email: inputData.email,
+            password: inputData.password,
+          })
+        );
       } else {
-        console.log('Please agree to the terms and conditions');
+        console.log("Please agree to the terms and conditions");
       }
     } else if (currState === "Profile") {
       dispatch(logout());
-      setShowLogin(false); 
+      setShowLogin(false);
     }
   };
 
@@ -60,13 +63,17 @@ const LoginPopup = ({ setShowLogin }) => {
     <div className="login">
       <form className="login__container" onSubmit={handleSubmit}>
         <div className="login__title">
-          <h2>{currState === 'Profile' ? 'Profile' : currState}</h2>
-          <img onClick={() => setShowLogin(false)} src={assets.cross_icon} alt="" />
+          <h2>{currState === "Profile" ? "Profile" : currState}</h2>
+          <img
+            onClick={() => setShowLogin(false)}
+            src={assets.cross_icon}
+            alt=""
+          />
         </div>
-        {currState !== 'Profile' ? (
+        {currState !== "Profile" ? (
           <>
             <div className="login__inputs">
-              {currState === "Sign Up" && 
+              {currState === "Sign Up" && (
                 <input
                   onChange={inputHandler}
                   name="name"
@@ -74,7 +81,8 @@ const LoginPopup = ({ setShowLogin }) => {
                   placeholder="Your Name"
                   value={inputData.name}
                   required
-                />}
+                />
+              )}
               <input
                 name="email"
                 onChange={inputHandler}
@@ -92,7 +100,7 @@ const LoginPopup = ({ setShowLogin }) => {
                 required
               />
             </div>
-            {currState === "Sign Up" &&
+            {currState === "Sign Up" && (
               <div className="login__condition">
                 <input
                   name="agreement"
@@ -102,9 +110,11 @@ const LoginPopup = ({ setShowLogin }) => {
                   required
                 />
                 <p>
-                  Davom etish orqali men foydalanish shartlari va maxfiylik siyosatiga rozilik bildiraman.
+                  Davom etish orqali men foydalanish shartlari va maxfiylik
+                  siyosatiga rozilik bildiraman.
                 </p>
-              </div>}
+              </div>
+            )}
             <button type="submit">
               {currState === "Sign Up" ? "Yangi hisob ochish" : "Kirish"}
             </button>
@@ -119,14 +129,32 @@ const LoginPopup = ({ setShowLogin }) => {
           </>
         ) : (
           <div className="login__profile">
-            <div className="login__profile--info">
-              <p>Ismi: {user?.name}</p>
-              <p>Email: {user?.email}</p>
+            <div className="login__profile--pic">
+              <AccountCircleIcon 
+                                sx={{
+                                  fontSize: "120px",
+                                  color: "tomato",
+                                }}
+              />
             </div>
-            <button type="button" onClick={() => dispatch(logout())}>Logout</button>
+            <div className="login__profile--info">
+              <div>
+                <label>Ismi:</label>
+                <p>{user?.name}</p>
+              </div>
+              <div>
+                <label>Emaili:</label>
+                <p>{user?.email}</p>
+              </div>
+            </div>
+            <button type="button" onClick={() => dispatch(logout())}>
+              Logout
+            </button>
           </div>
         )}
-        {status === 'failed' && <div className="login__error">Error: {error}</div>}
+        {status === "failed" && (
+          <div className="login__error">Error: {error}</div>
+        )}
       </form>
     </div>
   );

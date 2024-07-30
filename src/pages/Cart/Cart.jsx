@@ -3,6 +3,7 @@ import "./Cart.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { calculateTotals, removeFromCart } from "../../toolkit/Cart/cartSlice";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import {toast} from 'react-toastify'
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -14,10 +15,17 @@ const Cart = () => {
     dispatch(removeFromCart(id));
   };
 
-  useEffect(() => {
-    dispatch(calculateTotals());
-  }, [cartItems, dispatch]);
+useEffect(() => {
+  dispatch(calculateTotals());
+}, [cartItems, dispatch]);
 
+const navigateHandler = () => {
+  if (cartTotalAmount === 0) {
+    toast.error("Savatingiz bo'sh");
+  } else {
+    navigate('/order')
+  }
+};
 
   return (
     <div className="cart">
@@ -65,7 +73,7 @@ const Cart = () => {
               <hr />
               <hr />
             </div>
-            <button onClick={() => navigate('/order')}>Keyingi</button>
+            <button onClick={navigateHandler}>Keyingi</button>
           </div>
           <div className="cart__bottom-promocode">
             <h2>Promokodni kiriting</h2>

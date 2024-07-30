@@ -32,19 +32,18 @@ const PlaceOrder = () => {
     }));
   };
 
-
   const sendingMessage = async () => {
     const isEmpty = Object.values(inputData).some(x => x === '');
   
     if (isEmpty) {
-      toast.error('Please fill out all fields.');
+      toast.error("Bo'sh kataklarni to'ldiring");
       return;
     }
   
     try {
-      const response = await axios.post('http://localhost:4000/orders', inputData);
+      const response = await axios.post('http://localhost:3000/orders', inputData);
       if (response.status === 200) {
-        toast.success('Order placed successfully!');
+        toast.success('Buyurtmangiz muvaffaqiyatli qabul qilindi!');
         setInputData({
           name: '',
           surname: '',
@@ -56,16 +55,14 @@ const PlaceOrder = () => {
           country: '',
           telNomer: ''
         });
-        setInputData('')
       } else {
-        toast.error('Failed to place order. Please try again.');
+        toast.error("Buyurtma amalga oshmadi. Iltimos, yana bir bor urinib ko'ring.");
       }
     } catch (error) {
-      toast.error('Error sending message. Please try again.');
+      toast.error("Qaytadan urunib ko'ring");
     }
   };
   
-
   return (
     <div className="placeOrder">
       <div className="placeOrder__left">

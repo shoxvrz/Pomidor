@@ -12,11 +12,11 @@ const Navbar = ({ setShowLogin }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const user = useSelector((state) => state.auth.user); 
+const [searchDiv, setSearchDiv] = useState(false)
 
-  const handleLogout = () => {
-    dispatch(logout());
-    navigate("/"); 
-  };
+const searchHandler = () => {
+  setSearchDiv(prev => !prev)
+}
 
   return (
     <div id="navbar" className="navbar">
@@ -60,8 +60,37 @@ const Navbar = ({ setShowLogin }) => {
           Biz bilan bog'laning
         </a>
       </ul>
+      <div className="navbar__media">
+        <img
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate("/cart")}
+            src={assets.basket_icon}
+            alt=""
+          />
+        {cartItems.length === 0 ? null : (
+            <div className="navbar__right-icon--dot"></div>
+          )}
+                      <span
+              className="navbar__profile-text"
+              onClick={() => setShowLogin(true)}
+            >
+              <PersonIcon
+                sx={{
+                  fontSize: "38px",
+                  color: "#49557e",
+                }}
+              />
+            </span>
+        </div>
       <div className="navbar__right">
-        <img style={{ cursor: "pointer" }} src={assets.search_icon} alt="" />
+    {
+      searchDiv && (
+        <input className="searchInput" type="text" />
+      )
+    }
+        <img 
+        onClick={searchHandler}
+        style={{ cursor: "pointer" }} src={assets.search_icon} alt="" />
         <div className="navbar__right-icon">
           <img
             style={{ cursor: "pointer" }}
