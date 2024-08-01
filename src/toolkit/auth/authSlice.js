@@ -1,10 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Define the base URL for your mock API
 const API_URL = 'http://localhost:3000';
 
-// Async thunk for login
 export const login = createAsyncThunk('auth/login', async (credentials, { rejectWithValue }) => {
   try {
     const response = await axios.get(`${API_URL}/users`, {
@@ -16,8 +14,7 @@ export const login = createAsyncThunk('auth/login', async (credentials, { reject
 
     if (response.data.length) {
       const user = response.data[0];
-      const token = 'mock-token'; // Simulate a token
-      // Save user and token to local storage
+      const token = 'mock-token'; 
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('token', token);
       return { user, token };
@@ -29,10 +26,10 @@ export const login = createAsyncThunk('auth/login', async (credentials, { reject
   }
 });
 
-// Async thunk for signup
+
 export const signup = createAsyncThunk('auth/signup', async (userData, { rejectWithValue }) => {
   try {
-    // Check if user already exists
+
     const existingUserResponse = await axios.get(`${API_URL}/users`, {
       params: { email: userData.email }
     });
@@ -41,11 +38,10 @@ export const signup = createAsyncThunk('auth/signup', async (userData, { rejectW
       throw new Error('User already exists');
     }
 
-    // Create new user
+
     const response = await axios.post(`${API_URL}/users`, userData);
     const user = response.data;
-    const token = 'mock-token'; // Simulate a token
-    // Save user and token to local storage
+    const token = 'mock-token'; 
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('token', token);
     return { user, token };
@@ -59,14 +55,13 @@ const authSlice = createSlice({
   initialState: {
     user: JSON.parse(localStorage.getItem('user')) || null,
     token: localStorage.getItem('token') || null,
-    status: 'idle', // 'loading', 'succeeded', 'failed'
+    status: 'idle', 
     error: null,
   },
   reducers: {
     logout(state) {
       state.user = null;
       state.token = null;
-      // Clear local storage
       localStorage.removeItem('user');
       localStorage.removeItem('token');
     },

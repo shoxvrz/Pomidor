@@ -4,6 +4,8 @@ import { login, signup, logout } from "../../toolkit/auth/authSlice";
 import { assets } from "../../assets/assets";
 import "./LoginPopup.scss";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import PersonIcon from '@mui/icons-material/Person';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
 const LoginPopup = ({ setShowLogin }) => {
   const dispatch = useDispatch();
@@ -136,24 +138,31 @@ const LoginPopup = ({ setShowLogin }) => {
                                   color: "tomato",
                                 }}
               />
+              <h1>Profil</h1>
             </div>
             <div className="login__profile--info">
               <div>
-                <label>Ismi:</label>
+              <PersonIcon                                 sx={{
+                                  fontSize: "35px",
+                                  color: "tomato",
+                                }} />
                 <p>{user?.name}</p>
               </div>
               <div>
-                <label>Emaili:</label>
+                <AlternateEmailIcon                                 sx={{
+                                  fontSize: "35px",
+                                  color: "tomato",
+                                }} />
                 <p>{user?.email}</p>
               </div>
             </div>
             <button type="button" onClick={() => dispatch(logout())}>
-              Logout
+              Chiqish
             </button>
           </div>
         )}
         {status === "failed" && (
-          <div className="login__error">Error: {error}</div>
+          <div className="login__error">Xato: {error}</div>
         )}
       </form>
     </div>

@@ -17,8 +17,9 @@
   }
 
   .active {
+    transform: scale(1.1);
     padding-bottom: 2px;
-    border-bottom: 1px solid #49557e;
+    color: tomato;
   }
 
   &__logo {

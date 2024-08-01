@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from 'axios';
 import "./PlaceOrder.scss";
-import { calculateTotals } from "../../toolkit/Cart/cartSlice";
+import { calculateTotals, clearCart } from "../../toolkit/Cart/cartSlice";
 import { toast } from 'react-toastify';
 
 const PlaceOrder = () => {
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const cartTotalAmount = useSelector((state) => state.cart.cartTotalAmount);
   const [inputData, setInputData] = useState({
     name: '',
@@ -34,15 +35,20 @@ const PlaceOrder = () => {
 
   const sendingMessage = async () => {
     const isEmpty = Object.values(inputData).some(x => x === '');
-  
+
     if (isEmpty) {
       toast.error("Bo'sh kataklarni to'ldiring");
       return;
     }
-  
+
+    const orderData = {
+      ...inputData,
+      items: cartItems,
+    };
+
     try {
-      const response = await axios.post('http://localhost:3000/orders', inputData);
-      if (response.status === 200) {
+      const response = await axios.post('http://localhost:3000/orders', orderData);
+      if (response.status === 201) {
         toast.success('Buyurtmangiz muvaffaqiyatli qabul qilindi!');
         setInputData({
           name: '',
@@ -55,14 +61,17 @@ const PlaceOrder = () => {
           country: '',
           telNomer: ''
         });
+        dispatch(clearCart());
       } else {
         toast.error("Buyurtma amalga oshmadi. Iltimos, yana bir bor urinib ko'ring.");
+        console.error("Response status:", response.status);
       }
     } catch (error) {
       toast.error("Qaytadan urunib ko'ring");
+      console.error("Error:", error);
     }
   };
-  
+
   return (
     <div className="placeOrder">
       <div className="placeOrder__left">

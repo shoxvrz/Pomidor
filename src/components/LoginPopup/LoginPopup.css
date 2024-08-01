@@ -13,18 +13,32 @@
   justify-content: center;
   gap: 40px;
 }
+.login__profile--pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login__profile--pic h1 {
+  color: #000;
+}
 .login__profile--info {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  gap: 15px;
+  gap: 25px;
 }
 .login__profile--info div {
+  border: 1px solid tomato;
+  border-radius: 10px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   gap: 5px;
+  align-items: center;
+  justify-content: start;
+  padding: 5px;
 }
 .login__profile--info div p {
   font-size: 25px;
@@ -93,4 +107,10 @@
   border-radius: 4px;
   padding: 10px;
   border: 1px solid #c9c9c9;
+}
+
+@media (max-width: 750px) {
+  .login__profile--info div p {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=LoginPopup.css.map */
