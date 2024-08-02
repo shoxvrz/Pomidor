@@ -1,0 +1,32 @@
+.orderPage {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+}
+.orderPage__main {
+  display: flex;
+  flex-direction: column;
+}
+.orderPage__main--top {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(8, 1fr);
+}
+.orderPage__main--card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.orderPage__main--card--userInfo {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(8, 1fr);
+}
+.orderPage__main--card--orderList {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 40px;
+}/*# sourceMappingURL=OrderPage.css.map */

@@ -385,6 +385,30 @@
       "name": "asdasd",
       "email": "12313123a@gmail.com",
       "password": "adsasd"
+    },
+    {
+      "id": "c0bd",
+      "name": "Shuxruz",
+      "email": "qweqw@gmail.com",
+      "password": "12"
+    },
+    {
+      "id": "3e18",
+      "name": "asdas",
+      "email": "admin@gmail.com",
+      "password": "12"
+    },
+    {
+      "id": "7562",
+      "name": "Shoxruz",
+      "email": "sh777@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "a6e3",
+      "name": "Shoxruz",
+      "email": "shoxruz@gmail.com",
+      "password": "1234"
     }
   ],
   "orders": [
@@ -407,6 +431,103 @@
           "price": 18,
           "image": "http://localhost:5173/src/assets/food_2.png",
           "cartQuantity": 1
+        }
+      ]
+    },
+    {
+      "id": "167a",
+      "name": "Shuxruz",
+      "surname": "dasdas",
+      "email": "asdasdasd@gmail.com",
+      "street": "asdsad",
+      "city": "asdasd",
+      "tuman": "asd",
+      "postcode": "asdas",
+      "country": "asdasd",
+      "telNomer": "dasdasdasd",
+      "items": [
+        {
+          "id": "68bf",
+          "name": "Veg salad",
+          "description": "Food provides essential nutrients for overall health and well-being",
+          "price": 18,
+          "image": "http://localhost:5173/src/assets/food_2.png",
+          "cartQuantity": 1
+        },
+        {
+          "id": "efd4",
+          "name": "Clover Salad",
+          "description": "Food provides essential nutrients for overall health and well-being",
+          "price": 16,
+          "image": "http://localhost:5173/src/assets/food_3.png",
+          "cartQuantity": 2
+        },
+        {
+          "id": "cf01",
+          "name": "Chicken Salad",
+          "description": "Food provides essential nutrients for overall health and well-being",
+          "price": 24,
+          "image": "http://localhost:5173/src/assets/food_4.png",
+          "cartQuantity": 7
+        }
+      ]
+    },
+    {
+      "id": "836c",
+      "name": "Shoxruz",
+      "surname": "Abdurasulov",
+      "email": "shoxruz@gmail.com",
+      "street": "Buyuk Zamin",
+      "city": "Toshkent",
+      "tuman": "Uchtepa",
+      "postcode": "1007",
+      "country": "Uzbekistan",
+      "telNomer": "+998915060463",
+      "items": []
+    },
+    {
+      "id": "bb46",
+      "name": "Shoxruz",
+      "surname": "Abdurasulov",
+      "email": "shoxruzabdurasulov7@gmail.com",
+      "street": "Buyuk Zamin",
+      "city": "Toshkent",
+      "tuman": "Uchtepa",
+      "postcode": "1007",
+      "country": "Uzbekistan",
+      "telNomer": "+998915060463",
+      "items": [
+        {
+          "id": "db94",
+          "name": "Peri Peri Rolls",
+          "description": "Food provides essential nutrients for overall health and well-being",
+          "price": 12,
+          "image": "http://localhost:5173/src/assets/food_6.png",
+          "cartQuantity": 3
+        },
+        {
+          "id": "cb00",
+          "name": "Chicken Rolls",
+          "description": "Food provides essential nutrients for overall health and well-being",
+          "price": 20,
+          "image": "http://localhost:5173/src/assets/food_7.png",
+          "cartQuantity": 4
+        },
+        {
+          "id": "270e",
+          "name": "Chicken Sandwich",
+          "description": "Food provides essential nutrients for overall health and well-being",
+          "price": 12,
+          "image": "http://localhost:5173/src/assets/food_13.png",
+          "cartQuantity": 3
+        },
+        {
+          "id": "eecb",
+          "name": "Vanilla Ice Cream",
+          "description": "Food provides essential nutrients for overall health and well-being",
+          "price": 12,
+          "image": "http://localhost:5173/src/assets/food_12.png",
+          "cartQuantity": 3
         }
       ]
     }

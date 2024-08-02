@@ -1,50 +1,24 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import authService from '../../service/Auth.jsx';
 
-const API_URL = 'http://localhost:3000';
+const initialState = {
+  user: JSON.parse(localStorage.getItem('user')) || null,
+  token: localStorage.getItem('token') || null,
+  status: 'idle', 
+  error: null,
+};
 
 export const login = createAsyncThunk('auth/login', async (credentials, { rejectWithValue }) => {
   try {
-    const response = await axios.get(`${API_URL}/users`, {
-      params: {
-        email: credentials.email,
-        password: credentials.password
-      }
-    });
-
-    if (response.data.length) {
-      const user = response.data[0];
-      const token = 'mock-token'; 
-      localStorage.setItem('user', JSON.stringify(user));
-      localStorage.setItem('token', token);
-      return { user, token };
-    } else {
-      throw new Error('Invalid credentials');
-    }
+    return await authService.login(credentials);
   } catch (error) {
     return rejectWithValue(error.message);
   }
 });
 
-
 export const signup = createAsyncThunk('auth/signup', async (userData, { rejectWithValue }) => {
   try {
-
-    const existingUserResponse = await axios.get(`${API_URL}/users`, {
-      params: { email: userData.email }
-    });
-
-    if (existingUserResponse.data.length) {
-      throw new Error('User already exists');
-    }
-
-
-    const response = await axios.post(`${API_URL}/users`, userData);
-    const user = response.data;
-    const token = 'mock-token'; 
-    localStorage.setItem('user', JSON.stringify(user));
-    localStorage.setItem('token', token);
-    return { user, token };
+    return await authService.signup(userData);
   } catch (error) {
     return rejectWithValue(error.message);
   }
@@ -52,18 +26,12 @@ export const signup = createAsyncThunk('auth/signup', async (userData, { rejectW
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: {
-    user: JSON.parse(localStorage.getItem('user')) || null,
-    token: localStorage.getItem('token') || null,
-    status: 'idle', 
-    error: null,
-  },
+  initialState,
   reducers: {
     logout(state) {
       state.user = null;
       state.token = null;
-      localStorage.removeItem('user');
-      localStorage.removeItem('token');
+      authService.logout();
     },
   },
   extraReducers: (builder) => {

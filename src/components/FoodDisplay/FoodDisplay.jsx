@@ -1,4 +1,3 @@
-// src/components/FoodDisplay.js
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useGetAllDataQuery } from '../../toolkit/Food/foodApi';
@@ -7,7 +6,7 @@ import './FoodDisplay.scss';
 
 const FoodDisplay = () => {
   const { data, error, isLoading } = useGetAllDataQuery();
-  const selectedCategory = useSelector((state) => state.category.selectedCategory);
+  const searchQuery = useSelector((state) => state.search.searchedItem);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -17,9 +16,9 @@ const FoodDisplay = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  const filteredItems = selectedCategory === 'all'
-    ? data
-    : data.filter((item) => item.category === selectedCategory);
+  const filteredItems = data.filter(item =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className='dispFood'>

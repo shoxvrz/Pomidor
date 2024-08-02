@@ -1,0 +1,36 @@
+.orderPage{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 20px;
+
+    &__main{
+        display: flex;
+        flex-direction: column;
+
+        &--top{
+            display: grid;
+            gap: 40px;
+            grid-template-columns: repeat(8, 1fr);
+        }
+
+        &--card{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &--userInfo{
+                display: grid;
+                gap: 40px;
+                grid-template-columns: repeat(8, 1fr);
+            }
+            &--orderList{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 40px;
+            }
+        }
+    }
+}

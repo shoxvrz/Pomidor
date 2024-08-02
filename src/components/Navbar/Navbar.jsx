@@ -3,7 +3,7 @@ import { assets } from "../../assets/assets";
 import "./Navbar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../../toolkit/auth/authSlice";
+import { searchItem } from "../../toolkit/SearchItem/SearchItem";  // Adjust path as necessary
 import PersonIcon from "@mui/icons-material/Person";
 
 const Navbar = ({ setShowLogin }) => {
@@ -11,12 +11,18 @@ const Navbar = ({ setShowLogin }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
-  const user = useSelector((state) => state.auth.user); 
-const [searchDiv, setSearchDiv] = useState(false)
+  const user = useSelector((state) => state.auth.user);
+  const [searchDiv, setSearchDiv] = useState(false);
+  const searchQuery = useSelector((state) => state.search.searchedItem);
 
-const searchHandler = () => {
-  setSearchDiv(prev => !prev)
-}
+  const searchHandler = () => {
+    setSearchDiv((prev) => !prev);
+  };
+
+  const inputHandler = (e) => {
+    const { value } = e.target;
+    dispatch(searchItem(value));
+  };
 
   return (
     <div id="navbar" className="navbar">
@@ -62,35 +68,41 @@ const searchHandler = () => {
       </ul>
       <div className="navbar__media">
         <img
-            style={{ cursor: "pointer" }}
-            onClick={() => navigate("/cart")}
-            src={assets.basket_icon}
-            alt=""
-          />
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate("/cart")}
+          src={assets.basket_icon}
+          alt=""
+        />
         {cartItems.length === 0 ? null : (
-            <div className="navbar__right-icon--dot"></div>
-          )}
-                      <span
-              className="navbar__profile-text"
-              onClick={() => setShowLogin(true)}
-            >
-              <PersonIcon
-                sx={{
-                  fontSize: "38px",
-                  color: "#49557e",
-                }}
-              />
-            </span>
-        </div>
+          <div className="navbar__right-icon--dot"></div>
+        )}
+        <span
+          className="navbar__profile-text"
+          onClick={() => setShowLogin(true)}
+        >
+          <PersonIcon
+            sx={{
+              fontSize: "38px",
+              color: "#49557e",
+            }}
+          />
+        </span>
+      </div>
       <div className="navbar__right">
-    {
-      searchDiv && (
-        <input className="searchInput" type="text" />
-      )
-    }
-        <img 
-        onClick={searchHandler}
-        style={{ cursor: "pointer" }} src={assets.search_icon} alt="" />
+        {searchDiv && (
+          <input
+            onChange={inputHandler}
+            className="searchInput"
+            type="text"
+            value={searchQuery}
+          />
+        )}
+        <img
+          onClick={searchHandler}
+          style={{ cursor: "pointer" }}
+          src={assets.search_icon}
+          alt=""
+        />
         <div className="navbar__right-icon">
           <img
             style={{ cursor: "pointer" }}

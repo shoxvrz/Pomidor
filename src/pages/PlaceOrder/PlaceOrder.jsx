@@ -105,7 +105,7 @@ const PlaceOrder = () => {
           <hr />
           <hr />
         </div>
-        <button onClick={sendingMessage}>To'lov Qilish</button>
+        <button onClick={sendingMessage}>Buyurtmani Jo'natish</button>
       </div>
     </div>
   );
