@@ -1,95 +1,11 @@
 {
   "foodData": [
-    {
-      "_id": "1",
-      "name": "Greek salad",
-      "image": "http://localhost:5173/src/assets/food_1.png",
-      "price": 12,
-      "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Salad",
-      "id": "3b0e"
-    },
-    {
-      "_id": "2",
-      "name": "Veg salad",
-      "image": "http://localhost:5173/src/assets/food_2.png",
-      "price": 18,
-      "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Salad",
-      "id": "68bf"
-    },
-    {
-      "_id": "3",
-      "name": "Clover Salad",
-      "image": "http://localhost:5173/src/assets/food_3.png",
-      "price": 16,
-      "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Salad",
-      "id": "efd4"
-    },
-    {
-      "_id": "4",
-      "name": "Chicken Salad",
-      "image": "http://localhost:5173/src/assets/food_4.png",
-      "price": 24,
-      "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Salad",
-      "id": "cf01"
-    },
-    {
-      "_id": "5",
-      "name": "Lasagna Rolls",
-      "image": "http://localhost:5173/src/assets/food_5.png",
-      "price": 14,
-      "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Rolls",
-      "id": "9d09"
-    },
-    {
-      "_id": "6",
-      "name": "Peri Peri Rolls",
-      "image": "http://localhost:5173/src/assets/food_6.png",
-      "price": 12,
-      "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Rolls",
-      "id": "db94"
-    },
-    {
-      "_id": "7",
-      "name": "Chicken Rolls",
-      "image": "http://localhost:5173/src/assets/food_7.png",
-      "price": 20,
-      "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Rolls",
-      "id": "cb00"
-    },
-    {
-      "_id": "8",
-      "name": "Veg Rolls",
-      "image": "http://localhost:5173/src/assets/food_8.png",
-      "price": 15,
-      "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Rolls",
-      "id": "ef30"
-    },
-    {
-      "_id": "9",
-      "name": "Ripple Ice Cream",
-      "image": "http://localhost:5173/src/assets/food_9.png",
-      "price": 14,
-      "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Deserts",
-      "id": "28e8"
-    },
-    {
-      "_id": "10",
-      "name": "Fruit Ice Cream",
-      "image": "http://localhost:5173/src/assets/food_10.png",
-      "price": 22,
-      "description": "Food provides essential nutrients for overall health and well-being",
-      "category": "Deserts",
-      "id": "85d2"
-    },
+
+
+
+
+
+
     {
       "_id": "11",
       "name": "Jar Ice Cream",

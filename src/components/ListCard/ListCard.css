@@ -8,4 +8,7 @@
 }
 .listCard img {
   width: 50px;
+}
+.listCard .xx {
+  cursor: pointer;
 }/*# sourceMappingURL=ListCard.css.map */
