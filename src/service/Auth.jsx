@@ -24,13 +24,13 @@ const login = async (credentials) => {
 const signup = async (userData) => {
   try {
 
-    // const existingUserResponse = await axios.get(`${API_URL}`, {
-    //   params: { email: userData.email },
-    // });
+    const existingUserResponse = await axios.get(`${API_URL}`, {
+      params: { email: userData.email },
+    });
 
-    // if (existingUserResponse.data.length) {
-    //   throw new Error('User already exists');
-    // }
+    if (existingUserResponse.data.length) {
+      throw new Error('User already exists');
+    }
 
 
     const response = await axios.post(`${API_URL}`, userData);
