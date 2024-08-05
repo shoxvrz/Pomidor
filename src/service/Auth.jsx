@@ -1,16 +1,17 @@
 import axios from 'axios';
 
-const API_URL = 'https://api.mocki.io/v2/apfsstns/users';
+const API_URL = 'https://66adf655b18f3614e3b65836.mockapi.io/pomidor/users';
 
 const login = async (credentials) => {
-  const response = await axios.get(API_URL);
+  const response = await axios.get(API_URL, {
+    params: {
+      email: credentials.email,
+      password: credentials.password,
+    },
+  });
 
-  const users = response.data.users;
-  const user = users.find(
-    (u) => u.email === credentials.email && u.password === credentials.password
-  );
-
-  if (user) {
+  if (response.data.length) {
+    const user = response.data[0];
     localStorage.setItem('user', JSON.stringify(user));
     return { user };
   } else {
@@ -19,21 +20,16 @@ const login = async (credentials) => {
 };
 
 const signup = async (userData) => {
-  const response = await axios.get(API_URL);
+  const existingUserResponse = await axios.get(`API_URL?${userData.email}`);
 
-  const users = response.data.users;
-  const existingUser = users.find((u) => u.email === userData.email);
-
-  if (existingUser) {
+  if (existingUserResponse.data.length < 0) {
     throw new Error('User already exists');
   }
 
-  const newUser = { ...userData, createdAt: new Date().toISOString() };
-  // Note: In a real scenario, you would send a POST request to add the new user
-  // Since Mocki doesn't support dynamic changes, this step is illustrative
-  users.push(newUser);
-  localStorage.setItem('user', JSON.stringify(newUser));
-  return { user: newUser };
+  const response = await axios.post(API_URL, userData);
+  const user = response.data;
+  localStorage.setItem('user', JSON.stringify(user));
+  return { user };
 };
 
 const logout = () => {
