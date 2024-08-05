@@ -8,9 +8,11 @@
   animation: fadeIn 1s;
   overflow: hidden;
   display: grid;
+  position: relative;
 }
 .foodItem__info {
   padding: 20px;
+  height: 11vw;
 }
 .foodItem__info-desc {
   color: #676767;
@@ -39,6 +41,11 @@
   width: 100%;
   border-radius: 15px 15px 0px 0px;
   position: relative;
+  height: 11vw;
+}
+.foodItem__imgCont .image {
+  width: 100%;
+  height: 100%;
 }
 .foodItem__imgCont-counter {
   position: absolute;
@@ -51,7 +58,7 @@
   border-radius: 50px;
   background: #fff;
 }
-.foodItem__imgCont-counter img {
+.foodItem__imgCont-counter .addBtn {
   cursor: pointer;
 }
 .foodItem__imgCont .addBtn {

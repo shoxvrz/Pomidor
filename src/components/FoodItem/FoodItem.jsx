@@ -23,7 +23,7 @@ const FoodItem = ({ id, image, name, description, price }) => {
   return (
     <div className="foodItem">
       <div className="foodItem__imgCont">
-        <img src={image} alt="" />
+        <img className="image" src={image} alt="" />
         {!itemCount ? (
           <img
             className="addBtn"
