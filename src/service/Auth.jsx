@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://mocki.io/v1/your-mock-api-id';
+const API_URL = 'https://api.mocki.io/v2/apfsstns/users';
 
 const login = async (credentials) => {
   const response = await axios.get(API_URL);
