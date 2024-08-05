@@ -37,7 +37,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid;
   gap: 40px;
 }
 .navbar__right-icon {

@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { searchItem } from "../../toolkit/SearchItem/SearchItem";  // Adjust path as necessary
 import PersonIcon from "@mui/icons-material/Person";
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 const Navbar = ({ setShowLogin }) => {
   const [underLine, setUnderLine] = useState("home");
@@ -67,12 +68,16 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className="navbar__media">
-        <img
-        className="media-icon"
-          style={{ cursor: "pointer" }}
-          onClick={() => navigate("/cart")}
-          src={assets.basket_icon}
-          alt=""
+        <ShoppingBasketIcon
+               className="media-icon"
+               style={{ cursor: "pointer" }}
+               onClick={() => navigate("/cart")}
+               src={assets.basket_icon}
+               alt=""
+               sx={{
+                fontSize: "38px",
+                color: "#49557e",
+               }}
         />
         {cartItems.length === 0 ? null : (
           <div className="navbar__right-icon--dot"></div>

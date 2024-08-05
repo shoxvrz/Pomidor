@@ -4,6 +4,7 @@ import "./FoodItem.scss";
 import { useDispatch } from 'react-redux';
 import { addToCart, decreaseCart } from '../../toolkit/Cart/cartSlice'; 
 
+
 const FoodItem = ({ id, image, name, description, price }) => {
   const dispatch = useDispatch();
   const [itemCount, setItemCount] = useState(0);

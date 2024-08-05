@@ -35,7 +35,7 @@ const FoodDisplay = () => {
         {filteredItems.length > 0 ? (
           filteredItems.map((item, i) => <FoodItem key={i} {...item} />)
         ) : (
-          <p>No items found</p>
+          <p>Hech narsa topilmadi!</p>
         )}
       </div>
     </div>
