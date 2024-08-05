@@ -3,8 +3,7 @@ import authService from '../../service/Auth.jsx';
 
 const initialState = {
   user: JSON.parse(localStorage.getItem('user')) || null,
-  token: localStorage.getItem('token') || null,
-  status: 'idle', 
+  status: 'idle',
   error: null,
 };
 
@@ -30,7 +29,6 @@ const authSlice = createSlice({
   reducers: {
     logout(state) {
       state.user = null;
-      state.token = null;
       authService.logout();
     },
   },
@@ -42,7 +40,6 @@ const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.user = action.payload.user;
-        state.token = action.payload.token;
       })
       .addCase(login.rejected, (state, action) => {
         state.status = 'failed';
@@ -54,7 +51,6 @@ const authSlice = createSlice({
       .addCase(signup.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.user = action.payload.user;
-        state.token = action.payload.token;
       })
       .addCase(signup.rejected, (state, action) => {
         state.status = 'failed';

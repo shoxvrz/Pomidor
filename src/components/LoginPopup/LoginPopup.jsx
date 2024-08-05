@@ -4,8 +4,8 @@ import { login, signup, logout } from "../../toolkit/auth/authSlice";
 import { assets } from "../../assets/assets";
 import "./LoginPopup.scss";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import PersonIcon from '@mui/icons-material/Person';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import PersonIcon from "@mui/icons-material/Person";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 

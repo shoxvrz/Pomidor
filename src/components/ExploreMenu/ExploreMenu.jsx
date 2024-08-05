@@ -9,6 +9,8 @@ const ExploreMenu = () => {
   const dispatch = useDispatch();
   const category = useSelector((state) => state.category.selectedCategory);
 
+  console.log(category);
+
   return (
     <div className='expMenu' id='expMenu'>
       <h1>Bizning menyu bilan tanishing</h1>

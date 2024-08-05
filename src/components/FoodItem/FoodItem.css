@@ -79,10 +79,10 @@
     width: 100%;
   }
   .foodItem__info {
-    height: 50vw;
+    height: 40vw;
   }
   .foodItem__imgCont {
-    height: 50vw;
+    height: 60vw;
   }
   .foodItem__imgCont .image {
     width: 100%;
