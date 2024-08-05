@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://66adf655b18f3614e3b65836.mockapi.io/pomidor/users';
+const API_URL = '	https://api.mocki.io/v2/apfsstns/users';
 
 const login = async (credentials) => {
   const response = await axios.get(`${API_URL}`, {
