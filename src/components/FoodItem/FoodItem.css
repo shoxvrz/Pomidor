@@ -64,4 +64,11 @@
 }
 .foodItem__imgCont img {
   width: 100%;
+}
+
+@media (max-width: 750px) {
+  .foodItem {
+    height: 105vw;
+    width: 100%;
+  }
 }/*# sourceMappingURL=FoodItem.css.map */

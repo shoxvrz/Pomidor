@@ -1,1 +1,1 @@
-{"version":3,"sources":["FoodDisplay.scss","FoodDisplay.css"],"names":[],"mappings":"AAAA;EACI,gBAAA;ACCJ;ADCI;EACI,yBAAA;EACA,gBAAA;ACCR;ADEI;EACI,aAAA;EACA,2DAAA;EACA,gBAAA;EACA,SAAA;EACA,aAAA;ACAR","file":"FoodDisplay.css"}
+{"version":3,"sources":["FoodDisplay.scss","FoodDisplay.css"],"names":[],"mappings":"AAAA;EACI,gBAAA;ACCJ;ADCI;EACI,yBAAA;EACA,gBAAA;ACCR;ADEI;EACI,aAAA;EACA,2DAAA;EACA,gBAAA;EACA,SAAA;EACA,aAAA;ACAR;;ADGA;EACI;IACI,aAAA;IACA,8BAAA;IACA,gBAAA;IACA,SAAA;ECAN;EDEM;IACI,gBAAA;ECAV;AACF","file":"FoodDisplay.css"}
