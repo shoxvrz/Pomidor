@@ -14,16 +14,16 @@
         row-gap: 50px;
     }
 }
-@media (max-width: 750px){
-    .dispFood{
-        display: flex;
-        flex-direction: column-reverse;
-        background: #000;
-        gap: 20px;
+// @media (max-width: 750px){
+//     .dispFood{
+//         display: flex;
+//         flex-direction: column-reverse;
+//         background: #000;
+//         gap: 20px;
 
-        &__list{
-            margin-top: 50px;
+//         &__list{
+//             margin-top: 50px;
 
-        }
-    }
-}
+//         }
+//     }
+// }

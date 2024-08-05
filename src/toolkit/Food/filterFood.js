@@ -1,4 +1,3 @@
-// src/features/categorySlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const categorySlice = createSlice({

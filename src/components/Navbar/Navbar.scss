@@ -87,6 +87,9 @@
     }
     &__right {
       gap: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       & button {
         padding: 8px 25px;
@@ -110,6 +113,9 @@
     }
     &__right {
       gap: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &-icon{
         position: relative;
@@ -145,6 +151,12 @@
       align-items: center;
       justify-content: center;
       gap: 15px;
+
+      & span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
     &__right {
       display: none;

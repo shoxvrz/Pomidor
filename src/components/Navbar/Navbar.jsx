@@ -68,6 +68,7 @@ const Navbar = ({ setShowLogin }) => {
       </ul>
       <div className="navbar__media">
         <img
+        className="media-icon"
           style={{ cursor: "pointer" }}
           onClick={() => navigate("/cart")}
           src={assets.basket_icon}

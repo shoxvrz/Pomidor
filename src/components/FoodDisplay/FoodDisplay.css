@@ -11,16 +11,4 @@
   margin-top: 30px;
   gap: 30px;
   row-gap: 50px;
-}
-
-@media (max-width: 750px) {
-  .dispFood {
-    display: flex;
-    flex-direction: column-reverse;
-    background: #000;
-    gap: 20px;
-  }
-  .dispFood__list {
-    margin-top: 50px;
-  }
 }/*# sourceMappingURL=FoodDisplay.css.map */

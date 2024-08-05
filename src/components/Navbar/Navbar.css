@@ -76,6 +76,9 @@
   }
   .navbar__right {
     gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .navbar__right button {
     padding: 8px 25px;
@@ -95,6 +98,9 @@
   }
   .navbar__right {
     gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .navbar__right-icon {
     position: relative;
@@ -123,6 +129,11 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
+  }
+  .navbar__media span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .navbar__right {
     display: none;
