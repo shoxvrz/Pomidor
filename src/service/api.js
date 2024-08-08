@@ -10,8 +10,12 @@ const instance = axios.create({
 });
 
 export const sendTgMessage = async (orderData) => {
+    const now = new Date();
+    const date = now.toLocaleDateString();
+    const time = now.toLocaleTimeString()
     const message = `
         *Buyurtma Ma'lumotlari*
+        Sana va Vaqt: ${time}, ${date}
         Ismi: ${orderData.name}
         Familiyasi: ${orderData.surname}
         Email: ${orderData.email}
