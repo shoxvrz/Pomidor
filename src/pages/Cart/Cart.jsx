@@ -1,31 +1,61 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Cart.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { calculateTotals, removeFromCart } from "../../toolkit/Cart/cartSlice";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import {toast} from 'react-toastify'
+import { calculateTotals, discountCart, removeFromCart } from "../../toolkit/Cart/cartSlice";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const cartTotalAmount = useSelector((state) => state.cart.cartTotalAmount);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [inputPromo, setInputPromo] = useState("");
+  const [discountedTotal, setDiscountedTotal] = useState(cartTotalAmount);
 
   const removeHandler = (id) => {
     dispatch(removeFromCart(id));
   };
 
-useEffect(() => {
-  dispatch(calculateTotals());
-}, [cartItems, dispatch]);
+  const discountActive = () => {
+    if (inputPromo === 'POMIDOR777') {
+      toast.success("Promokod qo'llanildi!");
+      const discount = 15; 
+      const newTotal = cartTotalAmount - discount;
+      setDiscountedTotal(newTotal);
+      dispatch(discountCart());  
+    } else {
+      toast.error("No'tog'ri promokod");
+    }
+  };
+  
+  useEffect(() => {
+    dispatch(calculateTotals());
+  }, [cartItems, dispatch]);
 
-const navigateHandler = () => {
-  if (cartTotalAmount === 0) {
-    toast.error("Savatingiz bo'sh");
-  } else {
-    navigate('/order')
-  }
-};
+  useEffect(() => {
+    setDiscountedTotal(cartTotalAmount);
+  }, [cartTotalAmount]);
+
+  const navigateHandler = () => {
+    if (discountedTotal === 0) {
+      toast.error("Savatingiz bo'sh");
+    } else {
+      navigate("/order", { state: { discountedTotal } });
+    }
+  };
+  
+  
+
+  const promoHandler = () => {
+    if (inputPromo === "POMIDOR777") {
+      const discount = 15; // Assume a discount of 15,000 so'm
+      setDiscountedTotal(cartTotalAmount - discount);
+      toast.success("Promokod qo'llanildi!");
+    } else {
+      toast.error("Noto'g'ri promokod");
+    }
+  };
 
   return (
     <div className="cart">
@@ -61,7 +91,7 @@ const navigateHandler = () => {
         )}
         <div className="cart__bottom">
           <div className="cart__bottom-total">
-          <h2>Jami:</h2>
+            <h2>Jami:</h2>
             <div className="cart__bottom-total--details">
               <p>Yetkazib berish hizmati:</p>
               <p>15.000 so'm</p>
@@ -69,7 +99,7 @@ const navigateHandler = () => {
             </div>
             <div className="cart__bottom-total--details">
               <p>Hammasi:</p>
-              <p>{cartTotalAmount.toFixed(0)}.000 so'm</p>
+              <p>{discountedTotal.toFixed(0)}.000 so'm</p>
               <hr />
               <hr />
             </div>
@@ -77,8 +107,12 @@ const navigateHandler = () => {
           </div>
           <div className="cart__bottom-promocode">
             <h2>Promokodni kiriting</h2>
-            <input type="text" placeholder="Promokod" />
-            <button >Tekshirish</button>
+            <input
+              onChange={(e) => setInputPromo(e.target.value)}
+              type="text"
+              placeholder="Promokod"
+            />
+            <button onClick={discountActive}>Tekshirish</button>
           </div>
         </div>
       </div>

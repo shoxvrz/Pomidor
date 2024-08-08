@@ -12,7 +12,9 @@ import AdminPage from "./pages/AdminPage/AdminPage.jsx";
 import AddPage from "./pages/AddPage/AddPage.jsx";
 import ListPage from "./pages/ListPage/ListPage.jsx";
 import OrderPage from "./pages/OrderPage/OrderPage.jsx";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,8 +56,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
+    </QueryClientProvider>
   </React.StrictMode>
 );

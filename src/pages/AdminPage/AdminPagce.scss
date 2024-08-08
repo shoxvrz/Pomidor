@@ -17,3 +17,9 @@ hr{
 .appC__content{
   display: flex; 
 }
+@media (max-width: 750px){
+  .appC{
+    display: flex;
+    flex-direction: column;
+  }
+}

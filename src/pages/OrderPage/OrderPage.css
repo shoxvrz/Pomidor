@@ -8,6 +8,7 @@
 .orderPage__main {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 .orderPage__main--top {
   display: grid;
