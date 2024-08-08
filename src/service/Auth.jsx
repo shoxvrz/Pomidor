@@ -20,11 +20,11 @@ const login = async (credentials) => {
 };
 
 const signup = async (userData) => {
-  const existingUserResponse = await axios.get(`API_URL?${userData.email}`);
+  // const existingUserResponse = await axios.get(`https://66adf655b18f3614e3b65836.mockapi.io/pomidor/users?${userData.email}`);
 
-  if (existingUserResponse.data.length < 0) {
-    throw new Error('User already exists');
-  }
+  // if (existingUserResponse.data.length < 0) {
+  //   throw new Error('User already exists');
+  // }
 
   const response = await axios.post(API_URL, userData);
   const user = response.data;

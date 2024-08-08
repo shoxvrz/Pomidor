@@ -47,7 +47,7 @@ const PlaceOrder = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/orders', orderData);
+      const response = await axios.post('https://66b482189f9169621ea33d7a.mockapi.io/orders', orderData);
       if (response.status === 201) {
         toast.success('Buyurtmangiz muvaffaqiyatli qabul qilindi!');
         setInputData({

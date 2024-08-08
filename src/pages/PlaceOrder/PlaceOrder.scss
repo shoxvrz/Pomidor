@@ -57,4 +57,11 @@
             outline-color: tomato;
         }
     }
+}; 
+@media (max-width: 750px){
+    .placeOrder{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+    }
 }
