@@ -129,6 +129,18 @@
     justify-content: center;
     gap: 15px;
   }
+  .navbar__media .basketIcon {
+    position: relative;
+  }
+  .navbar__media .basketIcon-dot {
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: tomato;
+    top: 0;
+    right: 0;
+  }
   .navbar__media span {
     display: flex;
     align-items: center;

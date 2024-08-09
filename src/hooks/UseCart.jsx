@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { calculateTotals, discountCart, removeFromCart } from "../../toolkit/Cart/cartSlice";
+import { calculateTotals, discountCart, removeFromCart } from "../toolkit/Cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import React, { useEffect, useState } from "react";
@@ -14,6 +14,7 @@ const UseCart = () => {
   
     const removeHandler = (id) => {
       dispatch(removeFromCart(id));
+      toast.success("Taom muvaffaqiyatli savatdan o'chirildi")
     };
   
     const discountActive = () => {

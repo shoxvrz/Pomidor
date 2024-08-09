@@ -116,10 +116,10 @@
       align-items: center;
       justify-content: center;
 
-      &-icon{
+      &-icon {
         position: relative;
 
-        &--dot{
+        &--dot {
           position: absolute;
           right: 100px;
           top: 25px;
@@ -151,7 +151,22 @@
       justify-content: center;
       gap: 15px;
 
-      & span{
+      & .basketIcon {
+        position: relative;
+
+        &-dot {
+          position: absolute;
+          height: 8px;
+          width: 8px;
+          border-radius: 50%;
+
+          background: tomato;
+          top: 0;
+          right: 0;
+        }
+      }
+
+      & span {
         display: flex;
         align-items: center;
         justify-content: center;

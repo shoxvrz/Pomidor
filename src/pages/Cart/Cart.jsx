@@ -1,61 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Cart.scss";
-import { useSelector, useDispatch } from "react-redux";
-import { calculateTotals, discountCart, removeFromCart } from "../../toolkit/Cart/cartSlice";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+
+import UseCart from "../../hooks/UseCart";
 
 const Cart = () => {
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const cartTotalAmount = useSelector((state) => state.cart.cartTotalAmount);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [inputPromo, setInputPromo] = useState("");
-  const [discountedTotal, setDiscountedTotal] = useState(cartTotalAmount);
-
-  const removeHandler = (id) => {
-    dispatch(removeFromCart(id));
-  };
-
-  const discountActive = () => {
-    if (inputPromo === 'POMIDOR777') {
-      toast.success("Promokod qo'llanildi!");
-      const discount = 15; 
-      const newTotal = cartTotalAmount - discount;
-      setDiscountedTotal(newTotal);
-      dispatch(discountCart());  
-    } else {
-      toast.error("No'tog'ri promokod");
-    }
-  };
-  
-  useEffect(() => {
-    dispatch(calculateTotals());
-  }, [cartItems, dispatch]);
-
-  useEffect(() => {
-    setDiscountedTotal(cartTotalAmount);
-  }, [cartTotalAmount]);
-
-  const navigateHandler = () => {
-    if (discountedTotal === 0) {
-      toast.error("Savatingiz bo'sh");
-    } else {
-      navigate("/order", { state: { discountedTotal } });
-    }
-  };
-  
-  
-
-  const promoHandler = () => {
-    if (inputPromo === "POMIDOR777") {
-      const discount = 15; // Assume a discount of 15,000 so'm
-      setDiscountedTotal(cartTotalAmount - discount);
-      toast.success("Promokod qo'llanildi!");
-    } else {
-      toast.error("Noto'g'ri promokod");
-    }
-  };
+  const {
+    removeHandler,
+    navigateHandler,
+    discountActive,
+    cartItems,
+    discountedTotal,
+    setInputPromo,
+  } = UseCart();
 
   return (
     <div className="cart">

@@ -68,6 +68,8 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className="navbar__media">
+        <div className="basketIcon">
+
         <ShoppingBasketIcon
                className="media-icon"
                style={{ cursor: "pointer" }}
@@ -80,8 +82,9 @@ const Navbar = ({ setShowLogin }) => {
                }}
         />
         {cartItems.length === 0 ? null : (
-          <div className="navbar__right-icon--dot"></div>
+          <div className="basketIcon-dot"></div>
         )}
+        </div>
         <span
           className="navbar__profile-text"
           onClick={() => setShowLogin(true)}
