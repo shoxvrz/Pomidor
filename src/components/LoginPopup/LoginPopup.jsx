@@ -8,6 +8,8 @@ import PersonIcon from "@mui/icons-material/Person";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import authService from "../../service/Auth";
+import { useGetAllDataQuery } from "../../toolkit/auth/usersApi";
 
 const LoginPopup = ({ setShowLogin }) => {
   const dispatch = useDispatch();
@@ -19,6 +21,7 @@ const LoginPopup = ({ setShowLogin }) => {
     password: "",
     agreement: false,
   });
+  const { data: usersData } = useGetAllDataQuery(); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -44,42 +47,51 @@ const LoginPopup = ({ setShowLogin }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (currState === 'Login') {
-      try {
-        if (inputData.email === 'admin7777@gmail.com') {
+
+    try {
+      if (currState === 'Login') {
+        const credentials = {
+          email: inputData.email,
+          password: inputData.password,
+        };
+
+        if (credentials.email === 'admin7777@gmail.com' && credentials.password === '7777admin') {
           localStorage.setItem(
             'user',
-            JSON.stringify({ ...user, role: 777, token: Date.now() })
+            JSON.stringify({ role: 777, token: Date.now() })
           );
           toast.success('Muvaffaqiyatli Admin Paneliga kirdingiz');
           navigate('/admin/add');
         } else {
-          await dispatch(login({ email: inputData.email, password: inputData.password })).unwrap();
+          await dispatch(login(credentials)).unwrap();
           toast.success('Siz muvaffaqiyatli kirdingiz');
         }
-      } catch (error) {
-        toast.error('Login failed: ' + error);
-      }
-    } else if (currState === 'Sign Up') {
-      try {
+      } else if (currState === 'Sign Up') {
         if (inputData.agreement) {
-          await dispatch(
-            signup({
-              name: inputData.name,
-              email: inputData.email,
-              password: inputData.password,
-            })
-          ).unwrap();
-          toast.success('Account created successfully');
+          const existingUser = usersData.find(user => user.email === inputData.email);
+
+          if (existingUser) {
+            toast.error('Foydalanuvchi mavjud');
+            return;
+          }
+
+          const userData = {
+            name: inputData.name,
+            email: inputData.email,
+            password: inputData.password,
+          };
+
+          await dispatch(signup(userData)).unwrap();
+          toast.success('Hisob muvaffaqiyatli yaratildi');
         } else {
-          toast.error("Please agree to the terms and conditions");
+          toast.error("Iltimos foydalanish va maxfiylik siyosatiga rozilik bering");
         }
-      } catch (error) {
-        toast.error('Signup failed: ' + error);
+      } else if (currState === "Profile") {
+        dispatch(logout());
+        setShowLogin(false);
       }
-    } else if (currState === "Profile") {
-      dispatch(logout());
-      setShowLogin(false);
+    } catch (error) {
+      toast.error("Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring");
     }
   };
 
@@ -91,7 +103,7 @@ const LoginPopup = ({ setShowLogin }) => {
           <img
             onClick={() => setShowLogin(false)}
             src={assets.cross_icon}
-            alt=""
+            alt="Close"
           />
         </div>
         {currState !== "Profile" ? (
@@ -147,7 +159,7 @@ const LoginPopup = ({ setShowLogin }) => {
                 ? "Hisobingiz bormi?"
                 : "Yangi hisob yaratilsinmi?"}
               <span style={{ cursor: "pointer" }} onClick={handleChange}>
-                {currState === "Sign Up" ? "Bosing" : "Bosing"}
+                {currState === "Sign Up" ? "Kirish" : "Sign Up"}
               </span>
             </p>
           </>
@@ -186,9 +198,6 @@ const LoginPopup = ({ setShowLogin }) => {
               Chiqish
             </button>
           </div>
-        )}
-        {status === "failed" && (
-          <div className="login__error">Xato: {error}</div>
         )}
       </form>
     </div>

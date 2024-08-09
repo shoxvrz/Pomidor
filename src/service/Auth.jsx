@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API_URL = 'https://66adf655b18f3614e3b65836.mockapi.io/pomidor/users';
 
+
 const login = async (credentials) => {
   const response = await axios.get(API_URL, {
     params: {
@@ -9,21 +10,25 @@ const login = async (credentials) => {
       password: credentials.password,
     },
   });
-
+  
   if (response.data.length) {
     const user = response.data[0];
     localStorage.setItem('user', JSON.stringify(user));
     return { user };
   } else {
-    throw new Error('Invalid credentials');
+    throw new Error("Nimadir notog'ri");
   }
 };
 
 const signup = async (userData) => {
-  const existingUserResponse = await axios.get(`https://66adf655b18f3614e3b65836.mockapi.io/pomidor/users?${userData.email}`);
+  const getUsersData = await axios.get(API_URL)
 
-  if (existingUserResponse.data.length > 0) {
-    throw new Error('User already exists');
+  console.log(getUsersData);
+  
+  const existingUser = getUsersData.data.find(user => user.email === userData.email);
+
+  if (existingUser) {
+    throw new Error('Foydalanuvchi mavjud');
   }
 
   const response = await axios.post(API_URL, userData);

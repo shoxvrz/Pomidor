@@ -1,37 +1,82 @@
-.orderPage{
+.orderPage {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: start;
-    gap: 20px;
-
-    &__main{
+    border: 1px solid #cccccc; 
+    border-radius: 8px;
+    width: 100%;
+    background-color: #f9f9f9; 
+  
+    &__top {
+      display: flex;
+      border: 1px solid #b3b3b3; 
+      border-radius: 8px 8px 0 0; 
+      background-color: #e0e0e0; 
+      padding: 15px; 
+      align-items: center;
+    }
+  
+    &__main {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px; 
+      padding: 20px; 
+  
+      &--top {
+        padding: 12px;
+        display: grid;
+        gap: 12px; 
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: repeat(9, 1fr);
+        border-bottom: 1px solid #808080;
+        background-color: #f2f2f2; 
+      }
+  
+      &--card {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-
-        &--top{
+        border: 2px solid;
+        overflow: hidden;
+        border-radius: 12px; 
+        background-color: #ffffff; 
+        &--userInfo {
+          padding: 12px; 
+          display: grid;
+          align-items: center;
+          justify-items: center;
+          gap: 30px; 
+          grid-template-columns: repeat(9, 1fr);
+          border-bottom: 1px solid #cccccc; 
+          background-color: #f7f7f7; 
+        }
+        
+        &--orderList {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          padding: 12px; 
+          background-color: #f0f0f0; 
+          & .card {
             display: grid;
-            gap: 40px;
-            grid-template-columns: repeat(8, 1fr);
-        }
-
-        &--card{
-            display: flex;
             flex-direction: column;
-            gap: 10px;
-
-            &--userInfo{
-                display: grid;
-                gap: 40px;
-                grid-template-columns: repeat(8, 1fr);
+            grid-template-columns: repeat(4, 1fr); 
+            border: 1px solid #d9d9d9; 
+            border-radius: 8px; 
+  
+            & div {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              padding: 10px; 
             }
-            &--orderList{
-                display: flex;
-                align-items: center;
-                justify-content: start;
-                gap: 40px;
-            }
+          }
         }
+      }
     }
-}
+  }
+  
