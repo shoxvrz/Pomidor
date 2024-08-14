@@ -29,4 +29,10 @@
 }
 .list__table-format img {
   width: 50px;
+}
+
+@media (max-width: 750px) {
+  .list__table-format {
+    display: none;
+  }
 }/*# sourceMappingURL=ListPage.css.map */

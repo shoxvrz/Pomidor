@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart, decreaseCart } from '../../toolkit/Cart/cartSlice'; 
 
 
-const FoodItem = ({ id, image, name, description, price }) => {
+const FoodItem = ({ id, image, name, description, price, imageUrl }) => {
   const dispatch = useDispatch();
   const [itemCount, setItemCount] = useState(0);
 
@@ -24,7 +24,7 @@ const FoodItem = ({ id, image, name, description, price }) => {
   return (
     <div className="foodItem">
       <div className="foodItem__imgCont">
-        <img className="image" src={image} alt="" />
+      <img className="image" src={image || imageUrl} alt="" />
         {!itemCount ? (
           <img
             className="addBtn"

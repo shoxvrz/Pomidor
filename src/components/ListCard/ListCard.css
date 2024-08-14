@@ -9,6 +9,29 @@
 .listCard img {
   width: 50px;
 }
-.listCard .xx {
-  cursor: pointer;
+.listCard__last {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 750px) {
+  .listCard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+  }
+  .listCard div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .listCard div img {
+    width: 100%;
+    border-radius: 20px;
+  }
 }/*# sourceMappingURL=ListCard.css.map */

@@ -7,7 +7,7 @@ import "./ListPage.scss";
 import axios from "axios";
 
 const ListPage = () => {
-  const { data: fetchedData, error, isLoading } = useGetAllDataQuery();
+  const { data: fetchedData, error, isLoading, refetch } = useGetAllDataQuery();
   const [data, setData] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -25,17 +25,17 @@ const ListPage = () => {
 
       if (response.status === 200) {
         setData((prevItems) => prevItems.filter((item) => item.id !== id));
-        toast.success("Item deleted successfully");
+        toast.success("Mahsulot muvaffaqiyatli o'chirildi");
       } else {
-        toast.error("Failed to delete item");
+        toast.error("Mahsulotni o'chirishda xatolik");
       }
     } catch (error) {
-      toast.error("Error deleting item");
+      toast.error("Qandaydir Xato!");
     }
   };
 
   const handleUpdate = () => {
-    useGetAllDataQuery.refetch();
+    refetch();
   };
 
   const handleEdit = (item) => {
@@ -47,7 +47,7 @@ const ListPage = () => {
   };
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p>Yuklanmoqda....</p>;
   }
 
   if (error) {

@@ -6,8 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddPage = () => {
-  const [image, setImage] = useState(null);
-  const [imageUrl, setImageUrl] = useState(null);
+  const [image, setImage] = useState("");
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -20,68 +19,61 @@ const AddPage = () => {
     setData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const onImageChange = (e) => {
-    const file = e.target.files[0];
-    setImage(file);
+
+
+  const onImageUrlChange = (e) => {
+    setImage(e.target.value);  
   };
 
-  const onSubmitHandler = async (e) => {
-    e.preventDefault();
-  
-    const formData = new FormData();
-    formData.append("name", data.name);
-    formData.append("description", data.description);
-    formData.append("price", Number(data.price));
-    formData.append("category", data.category);
-    formData.append("image", image);
-  
-    console.log("Submitting form with data:", data);
-    console.log("Submitting form with image:", image);
-  
-    try {
-      const response = await axios.post("http://localhost:3000/foodData", formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-  
-      console.log("Response:", response);
-  
-      if (response.status === 201) {
-        setData({
-          name: "",
-          description: "",
-          price: "",
-          category: "Milliy",
-        });
-        setImage(null);
-        setImageUrl(null);
-        toast.success('Item added successfully');
-      } else {
-        toast.error('Failed to add item');
-      }
-    } catch (error) {
-      console.error("Error uploading data:", error);
-      toast.error('An error occurred while uploading the data.');
-    }
+const onSubmitHandler = async (e) => {
+  e.preventDefault();
+
+  const payload = {
+    name: data.name,
+    description: data.description,
+    price: Number(data.price),
+    category: data.category,
+    image: image || "", 
   };
-  
+
+  console.log("Submitting form with data:", payload);
+
+  try {
+    const response = await axios.post("https://66adf655b18f3614e3b65836.mockapi.io/pomidor/foodData", payload);
+
+    console.log("Response:", response);
+
+    if (response.status === 201) {
+      setData({
+        name: "",
+        description: "",
+        price: "",
+        category: "Milliy",
+      });
+      setImage("");
+      toast.success('Item added successfully');
+    } else {
+      toast.error('Failed to add item');
+    }
+  } catch (error) {
+    console.error("Error uploading data:", error);
+    toast.error('An error occurred while uploading the data.');
+  }
+};
+
 
   return (
     <div className="add">
       <form onSubmit={onSubmitHandler} className="add__container">
         <div className="add__image">
-          <p>Upload Image</p>
-          <label htmlFor="image">
-            <img src={imageUrl || assets.upload_area} alt="Upload area" />
-          </label>
+          <p>Produkt Rasmi</p>
           <input
-            onChange={onImageChange}
-            name="image"
-            type="file"
-            id="image"
-            hidden
-            required
+            onChange={onImageUrlChange}
+            value={image}
+            type="text"
+            placeholder="Or enter image URL"
+            name="imageUrl"
+            required={!image}
           />
         </div>
         <div className="add__productName">
@@ -116,9 +108,9 @@ const AddPage = () => {
               required
             >
               <option value="Milliy">Milliy Taom</option>
-              <option value="Salad">Salad</option>
+              <option value="Salatlar">Salatlar</option>
               <option value="Shirinliklar">Shirinliklar</option>
-              <option value="Ichimliklar">Ichimliklar</option>
+              <option value="To'rtlar">To'rtlar</option>
             </select>
           </div>
           <div className="add__categoryPrice--price">

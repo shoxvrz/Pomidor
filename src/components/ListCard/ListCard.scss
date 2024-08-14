@@ -11,7 +11,31 @@
         width: 50px;
     }
 
-    & .xx{
-        cursor: pointer;
+    &__last{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 750px){
+    .listCard{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 1px solid lightgray;
+        border-radius: 20px;
+
+        & div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & img{
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
     }
 }

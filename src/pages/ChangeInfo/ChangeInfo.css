@@ -1,0 +1,41 @@
+.changeInfo {
+  width: 70%;
+  margin-left: max(5vw, 25px);
+  margin-top: 50px;
+  color: #6d6d6d;
+  font-size: 16px;
+  gap: 20px;
+}
+.changeInfo h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.changeInfo form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 25px;
+}
+.changeInfo form div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.changeInfo form div label {
+  font-size: 18px;
+}
+.changeInfo form div input {
+  padding: 10px;
+}
+.changeInfo form button {
+  max-width: 120px;
+  border: none;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+}/*# sourceMappingURL=ChangeInfo.css.map */

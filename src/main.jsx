@@ -13,6 +13,7 @@ import AddPage from "./pages/AddPage/AddPage.jsx";
 import ListPage from "./pages/ListPage/ListPage.jsx";
 import OrderPage from "./pages/OrderPage/OrderPage.jsx";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import ChangeInfo from "./pages/ChangeInfo/ChangeInfo.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         path: "orderList",
         element: <OrderPage />,
       },
+      {
+        path: 'changeInfo/:id',
+        element: <ChangeInfo/>
+      }
     ],
   },
 ]);
