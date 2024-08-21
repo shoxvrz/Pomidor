@@ -24,18 +24,18 @@ const UseCart = () => {
       return;
     }
 
-    if (cartItems.length >= 3 && cartTotalAmount >= 45) {
+    if (cartTotalAmount >= 45) {
       if (inputPromo === 'POMIDOR777') {
         toast.success("Promokod qo'llanildi!");
-        const discount = 15; // Example discount amount
+        const discount = 15; 
         setDiscountedTotal(cartTotalAmount - discount);
-        dispatch(discountCart()); // Assuming discountCart applies the discount to the state
-        setPromoUsed(true); // Mark promo code as used
+        dispatch(discountCart()); 
+        setPromoUsed(true); 
       } else {
         toast.error("Noto'g'ri promokod");
       }
     } else {
-      toast.error("Promokoddan foydalanish uchun savatda kamida 3 ta mahsulot bo'lishi va umumiy summa 45,000 dan oshishi kerak.");
+      toast.error("Promokoddan foydalanish uchun umumiy summa 45,000 so'mdan oshishi kerak.");
     }
   };
 
