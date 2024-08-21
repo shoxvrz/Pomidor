@@ -25,6 +25,14 @@ const LoginPopup = ({ setShowLogin }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
+  useEffect(() => {
     if (user) {
       setCurrState("Profile");
     } else {
@@ -159,7 +167,7 @@ const LoginPopup = ({ setShowLogin }) => {
                 ? "Hisobingiz bormi?"
                 : "Yangi hisob yaratilsinmi?"}
               <span style={{ cursor: "pointer" }} onClick={handleChange}>
-                {currState === "Sign Up" ? "Kirish" : "Sign Up"}
+                {currState === "Sign Up" ? "Kirish" : "Yangi hisob ochish"}
               </span>
             </p>
           </>

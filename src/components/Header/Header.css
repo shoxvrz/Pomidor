@@ -48,10 +48,32 @@
     max-width: 65%;
     padding: 10px 0;
   }
+  .header__contents h2 {
+    font-size: 17px;
+  }
   .header__contents p {
     display: none;
   }
   .header__contents a {
     padding: 5px 15px;
+  }
+}
+@media (max-width: 300px) {
+  .header {
+    height: 38vw;
+  }
+  .header__contents {
+    max-width: 65%;
+    padding: 10px 0;
+  }
+  .header__contents h2 {
+    font-size: 14px;
+  }
+  .header__contents p {
+    display: none;
+  }
+  .header__contents a {
+    padding: 2px 7px;
+    font-size: 10px;
   }
 }/*# sourceMappingURL=Header.css.map */

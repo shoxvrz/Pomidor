@@ -105,3 +105,36 @@
         }
     }
 }
+@media(max-width: 1180px){
+.foodItem{
+    height: 320px;
+
+    &__info{
+        height: 155px;
+        
+        &-rating{
+            & p{
+                font-size: 18px
+            }
+
+            & img{
+                width: 65px;
+            }
+        }
+        &-price{
+            font-size: 18px;
+        }
+
+        &-desc{
+            font-size: 10px;
+        }
+    }
+    &__imgCont{
+        height: 155px;
+
+        &-counter{
+            
+        }
+    }
+}
+}

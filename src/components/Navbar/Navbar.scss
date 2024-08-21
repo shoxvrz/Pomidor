@@ -75,10 +75,13 @@
     }
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1280px) {
   .navbar {
     &__logo {
       width: 140px;
+    }
+    .search{
+      display: none;
     }
     &__menu {
       gap: 20px;
@@ -141,6 +144,7 @@
 }
 @media (max-width: 700px) {
   .navbar {
+    padding: 0;
     &__menu {
       display: none;
     }
@@ -173,6 +177,15 @@
       }
     }
     &__right {
+      display: none;
+    }
+  }
+}
+
+@media(max-width: 920px){
+  .navbar{
+
+    &__menu{
       display: none;
     }
   }

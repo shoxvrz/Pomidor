@@ -5,6 +5,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5647058824);
   display: grid;
+  z-index: 1000;
 }
 .login__profile {
   display: flex;

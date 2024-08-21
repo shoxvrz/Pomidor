@@ -11,4 +11,41 @@
   margin-top: 30px;
   gap: 30px;
   row-gap: 50px;
+}
+
+@media (max-width: 1280px) {
+  .dispFood__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 30px;
+    gap: 30px;
+    row-gap: 50px;
+  }
+}
+@media (max-width: 1180px) {
+  .dispFood__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    margin-top: 30px;
+    gap: 20px;
+    row-gap: 30px;
+  }
+}
+@media (max-width: 540px) {
+  .dispFood__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin-top: 30px;
+    gap: 20px;
+    row-gap: 30px;
+  }
+}
+@media (max-width: 855px) {
+  .dispFood__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 30px;
+    gap: 20px;
+    row-gap: 30px;
+  }
 }/*# sourceMappingURL=FoodDisplay.css.map */

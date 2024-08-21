@@ -14,16 +14,47 @@
         row-gap: 50px;
     }
 }
-// @media (max-width: 750px){
-//     .dispFood{
-//         display: flex;
-//         flex-direction: column-reverse;
-//         background: #000;
-//         gap: 20px;
-
-//         &__list{
-//             margin-top: 50px;
-
-//         }
-//     }
-// }
+@media(max-width: 1280px){
+    .dispFood{
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            margin-top: 30px;
+            gap: 30px;
+            row-gap: 50px;
+        }
+    }
+}
+@media(max-width: 1180px){
+    .dispFood{
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            margin-top: 30px;
+            gap: 20px;
+            row-gap: 30px;
+        }
+    }
+}
+@media(max-width: 540px){
+    .dispFood{
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            margin-top: 30px;
+            gap: 20px;
+            row-gap: 30px;
+        }
+    }
+}
+@media(max-width: 855px){
+    .dispFood{
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            margin-top: 30px;
+            gap: 20px;
+            row-gap: 30px;
+        }
+    }
+}

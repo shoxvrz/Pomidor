@@ -108,6 +108,7 @@ const Navbar = ({ setShowLogin }) => {
         )}
         <img
           onClick={searchHandler}
+          className="search"
           style={{ cursor: "pointer" }}
           src={assets.search_icon}
           alt=""
