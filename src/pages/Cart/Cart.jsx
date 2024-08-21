@@ -1,6 +1,5 @@
 import React from "react";
 import "./Cart.scss";
-
 import UseCart from "../../hooks/UseCart";
 
 const Cart = () => {
@@ -55,7 +54,7 @@ const Cart = () => {
             </div>
             <div className="cart__bottom-total--details">
               <p>Hammasi:</p>
-              <p>{discountedTotal.toFixed(0)}.000 so'm</p>
+              <p>{discountedTotal}.000 so'm</p>
               <hr />
               <hr />
             </div>

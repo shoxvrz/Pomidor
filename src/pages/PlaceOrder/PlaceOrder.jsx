@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useMutation } from '@tanstack/react-query';
+import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import "./PlaceOrder.scss";
 import { calculateTotals, clearCart } from "../../toolkit/Cart/cartSlice";
 import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
-import { sendTgMessage } from '../../service/api'; 
-import {useNavigate} from 'react-router-dom'
+import { sendTgMessage } from "../../service/api";
+import { useNavigate } from "react-router-dom";
+import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-input-2";
 
 const PlaceOrder = () => {
   const dispatch = useDispatch();
@@ -28,7 +30,9 @@ const PlaceOrder = () => {
     telNomer: "",
     price: discountedTotal,
   });
-const navigate = useNavigate()
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(calculateTotals());
   }, [dispatch]);
@@ -41,14 +45,25 @@ const navigate = useNavigate()
     }));
   };
 
+  const phoneInputHandler = (phone) => {
+    setInputData((prev) => ({
+      ...prev,
+      telNomer: phone,
+    }));
+  };
 
-  const { mutate: placeOrder, isSuccess, isLoading, isError } = useMutation({
+  const {
+    mutate: placeOrder,
+    isSuccess,
+    isLoading,
+    isError,
+  } = useMutation({
     mutationFn: async (orderData) => {
       await axios.post(
         "https://66b482189f9169621ea33d7a.mockapi.io/orders",
         orderData
       );
-      await sendTgMessage(orderData); 
+      await sendTgMessage(orderData);
     },
     onSuccess: () => {
       toast.success("Buyurtmangiz muvaffaqiyatli qabul qilindi!");
@@ -62,12 +77,14 @@ const navigate = useNavigate()
         postcode: "",
         country: "",
         telNomer: "",
-        price: discountedTotal, 
+        price: discountedTotal,
       });
       dispatch(clearCart());
     },
     onError: () => {
-      toast.error("Buyurtma amalga oshmadi. Iltimos, yana bir bor urinib ko'ring.");
+      toast.error(
+        "Buyurtma amalga oshmadi. Iltimos, yana bir bor urinib ko'ring."
+      );
     },
   });
 
@@ -84,7 +101,7 @@ const navigate = useNavigate()
       items: cartItems,
     };
 
-    navigate('/')
+    navigate("/");
 
     placeOrder(orderData);
   };
@@ -155,12 +172,17 @@ const navigate = useNavigate()
             value={inputData.country}
           />
         </div>
-        <input
-          onChange={inputHandler}
+
+        <PhoneInput
+
+        inputStyle={{
+          width: '100%'
+        }}
           name="telNomer"
-          type="text"
-          placeholder="Telefon raqam"
+          country={"uz"}
           value={inputData.telNomer}
+          onChange={phoneInputHandler}
+          placeholder="Telefon raqam"
         />
       </div>
       <div className="placeOrder__right">
@@ -179,7 +201,7 @@ const navigate = useNavigate()
         <button onClick={sendingMessage} disabled={isLoading}>
           Buyurtma Qilish
         </button>
-        {isError && <p className="error">Error sending message. Please try again.</p>}
+        {isError && <p className="error">Xatolik yuz berdi</p>}
       </div>
     </div>
   );
