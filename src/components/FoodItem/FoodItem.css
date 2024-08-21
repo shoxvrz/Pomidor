@@ -75,10 +75,22 @@
 
 @media (max-width: 750px) {
   .foodItem {
-    height: 100px;
+    height: 100vw;
   }
   .foodItem__info {
     height: 40vw;
+  }
+  .foodItem__info-rating p {
+    font-size: 16px;
+  }
+  .foodItem__info-rating img {
+    width: 50px;
+  }
+  .foodItem__info-price {
+    font-size: 16px;
+  }
+  .foodItem__info-desc {
+    font-size: 10px;
   }
   .foodItem__imgCont {
     height: 60vw;

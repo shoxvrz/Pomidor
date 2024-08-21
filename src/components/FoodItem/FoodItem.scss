@@ -1,4 +1,4 @@
-.foodItem{
+.foodItem {
     width: 100%;
     height: 22vw;
     margin: auto;
@@ -9,134 +9,149 @@
     overflow: hidden;
     display: grid;
     position: relative;
-
-    &__info{
-        padding: 20px;
-        height: 11vw;
-
-        &-desc{
-            color: #676767;
-            font-size: 12px;
+  
+    &__info {
+      padding: 20px;
+      height: 11vw;
+  
+      &-desc {
+        color: #676767;
+        font-size: 12px;
+      }
+  
+      &-price {
+        color: tomato;
+        font-size: 22px;
+        font-weight: 500;
+        margin: 10px 0;
+      }
+  
+      &-rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+  
+        & p {
+          font-size: 20px;
+          font-weight: 500;
         }
-
-        &-price{
-            color: tomato;
-            font-size: 22px;
-            font-weight: 500;
-            margin: 10px 0;
+  
+        & img {
+          width: 70px;
         }
-        
-
-        &-rating{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-
-            & p{
-                font-size: 20px;
-                font-weight: 500;
-            }
-
-            & img{
-                width: 70px;
-            }
-        }
+      }
     }
-
-    &__imgCont{
+  
+    &__imgCont {
+      width: 100%;
+      border-radius: 15px 15px 0px 0px;
+      position: relative;
+      height: 11vw;
+  
+      & .image {
         width: 100%;
-        border-radius: 15px 15px 0px 0px;
-        position: relative;
-        height: 11vw;
-
-        & .image{
-            width: 100%;
-            height: 100%;
+        height: 100%;
+      }
+  
+      &-counter {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px;
+        border-radius: 50px;
+        background: #fff;
+  
+        & .addBtn {
+          cursor: pointer;
         }
-
-        &-counter{
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 6px;
-            border-radius: 50px;
-            background: #fff;
-
-            & .addBtn{
-                cursor: pointer;
-            }
-        }
-
-        & .addBtn{
-            width: 35px;
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            cursor: pointer;
-            border-radius: 50%;
-        }
-
-        & img{
-            width: 100%;
-        }
+      }
+  
+      & .addBtn {
+        width: 35px;
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+  
+      & img {
+        width: 100%;
+      }
     }
-}
-
-@media (max-width: 750px){
-    .foodItem{
-        height: 100px;
-
-
-        &__info{
-            height: 40vw;
+  }
+  
+  @media (max-width: 750px) {
+    .foodItem {
+      height: 100vw;
+      
+  
+      &__info {
+        height: 40vw;
+  
+        &-rating {
+          & p {
+            font-size: 16px;
+          }
+  
+          & img {
+            width: 50px;
+          }
         }
-        &__imgCont{
-            height: 60vw;
-
-            & .image{
-                width: 100%;
-                height: 100%;
-            }
-    
+  
+        &-price {
+          font-size: 16px;
         }
+  
+        &-desc {
+          font-size: 10px;
+        }
+      }
+  
+      &__imgCont {
+        height: 60vw;
+  
+        & .image {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
-}
-
-@media(max-width: 1180px){
-.foodItem{
-    height: 320px;
-
-    &__info{
+  }
+  @media (max-width: 1180px) {
+    .foodItem {
+      height: 320px;
+  
+      &__info {
         height: 155px;
-        
-        &-rating{
-            & p{
-                font-size: 18px
-            }
-
-            & img{
-                width: 65px;
-            }
-        }
-        &-price{
+  
+        &-rating {
+          & p {
             font-size: 18px;
+          }
+  
+          & img {
+            width: 65px;
+          }
         }
-
-        &-desc{
-            font-size: 10px;
+  
+        &-price {
+          font-size: 18px;
         }
-    }
-    &__imgCont{
+  
+        &-desc {
+          font-size: 10px;
+        }
+      }
+  
+      &__imgCont {
         height: 155px;
-
-        &-counter{
-            
-        }
+      }
     }
-}
-}
-
+  }
+  
+  
