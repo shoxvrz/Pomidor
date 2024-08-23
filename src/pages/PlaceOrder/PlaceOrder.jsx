@@ -17,6 +17,7 @@ const PlaceOrder = () => {
   const cartTotalAmount = useSelector((state) => state.cart.cartTotalAmount);
   const location = useLocation();
   const discountedTotal = location.state?.discountedTotal || cartTotalAmount;
+  const [errors, setErrors] = useState({});
 
   const [inputData, setInputData] = useState({
     name: "",
@@ -43,6 +44,10 @@ const PlaceOrder = () => {
       ...prev,
       [name]: value,
     }));
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "", // Clear error when user starts typing
+    }));
   };
 
   const phoneInputHandler = (phone) => {
@@ -50,11 +55,31 @@ const PlaceOrder = () => {
       ...prev,
       telNomer: phone,
     }));
+    setErrors((prev) => ({
+      ...prev,
+      telNomer: "", // Clear error when user starts typing
+    }));
+  };
+
+  const validateInputs = () => {
+    const newErrors = {};
+    if (!inputData.name) newErrors.name = "Ismingizni kiriting!";
+    if (!inputData.surname) newErrors.surname = "Familiyangizni kiriting!";
+    if (!inputData.email) newErrors.email = "Emailingizni kiriting!";
+    if (!inputData.street) newErrors.street = "Ko'chani kiriting!";
+    if (!inputData.city) newErrors.city = "Shaharni kiriting!";
+    if (!inputData.tuman) newErrors.tuman = "Tumanni kiriting!";
+    if (!inputData.postcode) newErrors.postcode = "Postkodni kiriting!";
+    if (!inputData.country) newErrors.country = "Davlatni kiriting!";
+    if (!inputData.telNomer) newErrors.telNomer = "Telefon raqamni kiriting!";
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
   };
 
   const {
     mutate: placeOrder,
-    isSuccess,
     isLoading,
     isError,
   } = useMutation({
@@ -89,27 +114,23 @@ const PlaceOrder = () => {
   });
 
   const sendingMessage = () => {
-    const isEmpty = Object.values(inputData).some((x) => x === "");
+    if (validateInputs()) {
+      const orderData = {
+        ...inputData,
+        items: cartItems,
+      };
 
-    if (isEmpty) {
+      placeOrder(orderData);
+      navigate("/");
+    } else {
       toast.error("Bo'sh kataklarni to'ldiring");
-      return;
     }
-
-    const orderData = {
-      ...inputData,
-      items: cartItems,
-    };
-
-    navigate("/");
-
-    placeOrder(orderData);
   };
 
   return (
     <div className="placeOrder">
       <div className="placeOrder__left">
-        <p className="placeOrder__left-title">Buyurtma haqida malumot</p>
+        <p className="placeOrder__left-title">Buyurtma haqida ma'lumot</p>
         <div className="placeOrder__left-multiFields">
           <input
             onChange={inputHandler}
@@ -117,6 +138,7 @@ const PlaceOrder = () => {
             type="text"
             placeholder="Ismingiz"
             value={inputData.name}
+            className={errors.name ? "input-error" : ""}
           />
           <input
             onChange={inputHandler}
@@ -124,6 +146,7 @@ const PlaceOrder = () => {
             type="text"
             placeholder="Familyangiz"
             value={inputData.surname}
+            className={errors.surname ? "input-error" : ""}
           />
         </div>
         <input
@@ -132,6 +155,7 @@ const PlaceOrder = () => {
           type="email"
           placeholder="Emailingiz"
           value={inputData.email}
+          className={errors.email ? "input-error" : ""}
         />
         <input
           onChange={inputHandler}
@@ -139,6 +163,7 @@ const PlaceOrder = () => {
           type="text"
           placeholder="Ko'changiz"
           value={inputData.street}
+          className={errors.street ? "input-error" : ""}
         />
         <div className="placeOrder__left-multiFields">
           <input
@@ -147,6 +172,7 @@ const PlaceOrder = () => {
             type="text"
             placeholder="Shahar"
             value={inputData.city}
+            className={errors.city ? "input-error" : ""}
           />
           <input
             onChange={inputHandler}
@@ -154,6 +180,7 @@ const PlaceOrder = () => {
             type="text"
             placeholder="Tuman"
             value={inputData.tuman}
+            className={errors.tuman ? "input-error" : ""}
           />
         </div>
         <div className="placeOrder__left-multiFields">
@@ -163,6 +190,7 @@ const PlaceOrder = () => {
             type="text"
             placeholder="Postkod"
             value={inputData.postcode}
+            className={errors.postcode ? "input-error" : ""}
           />
           <input
             onChange={inputHandler}
@@ -170,19 +198,17 @@ const PlaceOrder = () => {
             type="text"
             placeholder="Davlat"
             value={inputData.country}
+            className={errors.country ? "input-error" : ""}
           />
         </div>
-
         <PhoneInput
-
-        inputStyle={{
-          width: '100%'
-        }}
+          inputStyle={{ width: "100%" }}
           name="telNomer"
           country={"uz"}
           value={inputData.telNomer}
           onChange={phoneInputHandler}
           placeholder="Telefon raqam"
+          containerClass={errors.telNomer ? "input-error" : ""}
         />
       </div>
       <div className="placeOrder__right">
