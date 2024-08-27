@@ -75,6 +75,7 @@
   .navbar__menu {
     gap: 20px;
     font-size: 17px;
+    display: none;
   }
   .navbar__right {
     gap: 30px;
