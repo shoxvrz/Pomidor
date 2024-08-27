@@ -23,6 +23,9 @@ const LoginPopup = ({ setShowLogin }) => {
   });
   const { data: usersData } = useGetAllDataQuery(); 
   const navigate = useNavigate();
+  const regexName = /^[A-za-z]{1,14}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -55,14 +58,30 @@ const LoginPopup = ({ setShowLogin }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
 
+    if (currState === 'Sign Up' && !regexName.test(inputData.name)) {
+      toast.error("Ism 1-14 ta harfdan iborat bo'lishi kerak.");
+      return;
+    }
+  
+    if (!emailRegex.test(inputData.email)) {
+      toast.error("Yaroqli elektron pochta manzili kiriting.");
+      return;
+    }
+  
+    if (!passwordRegex.test(inputData.password)) {
+      toast.error("Parol kamida 8 ta belgidan iborat bo'lishi, katta harf, raqam va maxsus belgi o'z ichiga olishi kerak.");
+      return;
+    }
+  
     try {
       if (currState === 'Login') {
         const credentials = {
           email: inputData.email,
           password: inputData.password,
         };
-
+  
         if (credentials.email === 'admin7777@gmail.com' && credentials.password === '7777admin') {
           localStorage.setItem(
             'user',
@@ -77,18 +96,18 @@ const LoginPopup = ({ setShowLogin }) => {
       } else if (currState === 'Sign Up') {
         if (inputData.agreement) {
           const existingUser = usersData.find(user => user.email === inputData.email);
-
+  
           if (existingUser) {
             toast.error('Foydalanuvchi mavjud');
             return;
           }
-
+  
           const userData = {
             name: inputData.name,
             email: inputData.email,
             password: inputData.password,
           };
-
+  
           await dispatch(signup(userData)).unwrap();
           toast.success('Hisob muvaffaqiyatli yaratildi');
         } else {
@@ -102,6 +121,7 @@ const LoginPopup = ({ setShowLogin }) => {
       toast.error("Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring");
     }
   };
+  
 
   return (
     <div className="login">

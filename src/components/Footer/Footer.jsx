@@ -24,7 +24,7 @@ const Footer = () => {
         </div>
         <div className="footer__content-center">
           <h2>KOMPANIYA</h2>
-          <ul>
+          <ul className="footer__content-center-gap">
             <li>Bosh sahifa</li>
             <li>Biz haqimizda</li>
             <li>Yetkazib berish</li>
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
         <div className="footer__content-right">
           <h2>BOG'LANING</h2>
-          <ul>
+          <ul className="footer__content-center-gap">
             <li>+998-91-506-04-63</li>
             <li>shoxruzabdurasulov7@gmail.com</li>
           </ul>

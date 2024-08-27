@@ -39,6 +39,7 @@
 }
 .footer__content-left-iconsimg {
   width: 40px;
+  cursor: pointer;
 }
 .footer__content-left .logo {
   width: 200px;
@@ -62,8 +63,14 @@
   align-items: start;
   gap: 20px;
 }
+.footer__content-center-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .footer__content-center li {
   list-style: none;
+  cursor: pointer;
 }
 
 @media (max-width: 820px) {

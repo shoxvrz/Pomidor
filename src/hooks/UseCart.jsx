@@ -26,7 +26,7 @@ const UseCart = () => {
 
     if (cartTotalAmount >= 45) {
       if (inputPromo === 'POMIDOR777') {
-        toast.success("Promokod qo'llanildi!");
+        toast.success("25.000 so'm lik promokod muvaffaqiyatli qo'llanildi!");
         const discount = 15; 
         setDiscountedTotal(cartTotalAmount - discount);
         dispatch(discountCart()); 
