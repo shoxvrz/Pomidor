@@ -15,7 +15,7 @@ const Sidebar = () => {
           className={clickedOption === 'add' ? 'activeOption' : 'sidebar__option'}
         >
           <img src={assets.add_icon} alt="" />
-          <p>Add Items</p>
+          <p  className="name">Add Items</p>
         </NavLink>
         <NavLink
           to={'/admin/list'}
@@ -23,7 +23,7 @@ const Sidebar = () => {
           className={clickedOption === 'list' ? 'activeOption' : 'sidebar__option'}
         >
           <img src={assets.order_icon} alt="" />
-          <p>List Items</p>
+          <p  className="name">List Items</p>
         </NavLink>
         <NavLink
           to={'/admin/orderList'}
@@ -31,7 +31,7 @@ const Sidebar = () => {
           className={clickedOption === 'order' ? 'activeOption' : 'sidebar__option'}
         >
           <img src={assets.order_icon} alt="" />
-          <p>Order Items</p>
+          <p  className="name">Order Items</p>
         </NavLink>
       </div>
     </div>

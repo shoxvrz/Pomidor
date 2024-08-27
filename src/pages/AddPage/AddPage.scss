@@ -1,5 +1,5 @@
 .add {
-  width: 70%;
+  width: 80%;
   margin-left: max(5vw, 25px);
   margin-top: 50px;
   color: #6d6d6d;
@@ -17,6 +17,12 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    & input{
+      border: 1px solid #cacaca;
+      outline: none;
+      padding: 5px 20px;
+    }
   }
 
   &__productName,
@@ -28,10 +34,14 @@
 
     & input {
       padding: 10px;
+      border: 1px solid #cacaca;
+      outline: none;
     }
 
     & textarea {
       padding: 10px;
+      border: 1px solid #cacaca;
+      outline: none;
     }
   }
   & button {
@@ -51,6 +61,8 @@
     input {
       max-width: 120px;
       padding: 10px;
+      outline: none;
+      border: 1px solid #cacaca;
     }
 
     &--price {

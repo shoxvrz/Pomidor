@@ -3,6 +3,7 @@ import "./OrderPage.scss";
 import { useGetAllDataQuery } from "../../toolkit/orders/ordersApi";
 import axios from 'axios';
 import {toast} from 'react-toastify'
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const OrderPage = () => {
   const { error, isLoading, data } = useGetAllDataQuery();
@@ -48,22 +49,23 @@ const OrderPage = () => {
         {orders.map((order, i) => (
           <div key={order.id || i} className="orderPage__main--card">
             <div className="orderPage__main--card--userInfo">
-              <b>{order.name}</b>
-              <b>{order.surname}</b>
-              <b>{order.email}</b>
-              <b>{order.telNomer}</b>
-              <b>{order.country}</b>
-              <b>{order.city}</b>
-              <b>{order.tuman}</b>
-              <b>{order.postcode}</b>
-              <b onClick={() => removeHandler(order.id)} style={{cursor: 'pointer'}}>X</b>
+              <b><span className="media__name">Ism:</span>{order.name}</b>
+              <b><span className="media__name">Familiya:</span>{order.surname}</b>
+              <b><span className="media__name">Email:</span>{order.email}</b>
+              <b><span className="media__name">Tel:</span>{order.telNomer}</b>
+              <b><span className="media__name">Davlat:</span>{order.country}</b>
+              <b><span className="media__name">Shahar:</span>{order.city}</b>
+              <b><span className="media__name">Tuman:</span>{order.tuman}</b>
+              <b><span className="media__name">Postkod:</span>{order.postcode}</b>
+              <b onClick={() => removeHandler(order.id)} style={{cursor: 'pointer' ,color: "red"}}><DeleteIcon/></b>
             </div>
+            <div
+         
+              className="orderPage__main--card--orderList"
+            >
             {order.items.map((orderItem, id) => (
-              <div
-                key={orderItem.id || id}
-                className="orderPage__main--card--orderList"
-              >
-                <div className="card">
+                <div
+                     key={orderItem.id || id} className="card">
                   <div>
                     <b>Ovqat nomi:</b>
                     <b>{orderItem.name}</b>
@@ -77,8 +79,8 @@ const OrderPage = () => {
                     <b>{orderItem.cartQuantity}</b>
                   </div>
                 </div>
-              </div>
             ))}
+            </div>
           </div>
         ))}
       </div>

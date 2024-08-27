@@ -1,5 +1,5 @@
 .add {
-  width: 70%;
+  width: 80%;
   margin-left: max(5vw, 25px);
   margin-top: 50px;
   color: #6d6d6d;
@@ -17,6 +17,11 @@
   flex-direction: column;
   gap: 10px;
 }
+.add__image input {
+  border: 1px solid #cacaca;
+  outline: none;
+  padding: 5px 20px;
+}
 .add__productName, .add__productDescription {
   width: max(40%, 280px);
   display: flex;
@@ -25,9 +30,13 @@
 }
 .add__productName input, .add__productDescription input {
   padding: 10px;
+  border: 1px solid #cacaca;
+  outline: none;
 }
 .add__productName textarea, .add__productDescription textarea {
   padding: 10px;
+  border: 1px solid #cacaca;
+  outline: none;
 }
 .add button {
   max-width: 120px;
@@ -46,6 +55,8 @@
 .add__categoryPrice input {
   max-width: 120px;
   padding: 10px;
+  outline: none;
+  border: 1px solid #cacaca;
 }
 .add__categoryPrice--price {
   display: flex;

@@ -46,7 +46,7 @@ const PlaceOrder = () => {
     }));
     setErrors((prev) => ({
       ...prev,
-      [name]: "", // Clear error when user starts typing
+      [name]: "", 
     }));
   };
 
@@ -57,7 +57,7 @@ const PlaceOrder = () => {
     }));
     setErrors((prev) => ({
       ...prev,
-      telNomer: "", // Clear error when user starts typing
+      telNomer: "", 
     }));
   };
 
@@ -77,6 +77,8 @@ const PlaceOrder = () => {
 
     return Object.keys(newErrors).length === 0;
   };
+
+
 
   const {
     mutate: placeOrder,
@@ -220,7 +222,7 @@ const PlaceOrder = () => {
         </div>
         <div className="cart__bottom-total--details placeOrder__right-details">
           <p>Hammasi:</p>
-          <p>{discountedTotal.toFixed(0)}.000 so'm</p>
+          <p>{discountedTotal}.000 so'm</p>
           <hr />
           <hr />
         </div>

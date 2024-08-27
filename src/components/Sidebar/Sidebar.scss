@@ -1,5 +1,5 @@
 .sidebar{
-    width: 18%;
+    width: 20%;
     min-height: 100vh;
     border: 1.5px solid #a9a9a9;
     border-top: 0;
@@ -39,12 +39,25 @@
 @media (max-width: 750px) {
         .sidebar{
 
-            &__option{
-
+            &__options{
+                padding: 10px 0px 0px 10px;
                 & p{
 
                     display: none;
                 }
             }
         }
+}
+@media (max-width: 450px) {
+    .sidebar{
+
+        &__options{
+            padding: 10px 0px 0px 10px;
+
+            & .name{
+
+                display: none;
+            }
+        }
+    }
 }
