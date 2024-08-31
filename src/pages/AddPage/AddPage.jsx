@@ -107,10 +107,14 @@ const onSubmitHandler = async (e) => {
               name="category"
               required
             >
-              <option value="Milliy">Milliy Taom</option>
               <option value="Salatlar">Salatlar</option>
+              <option value="Rulonlar">Rulonlar</option>
               <option value="Shirinliklar">Shirinliklar</option>
+              <option value="Sendvichlar">Sendvichlar</option>             
               <option value="To'rtlar">To'rtlar</option>
+              <option value="Tabiiy">Tabiiy</option>
+              <option value="Makaron">Makaron</option>
+              <option value="Milliy">Milliy Taom</option>
             </select>
           </div>
           <div className="add__categoryPrice--price">
