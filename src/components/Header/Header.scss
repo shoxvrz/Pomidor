@@ -62,7 +62,7 @@
     }
     
 }
-@media (max-width: 300px) {
+@media (max-width: 450px) {
     .header{
         height: 38vw;
 
@@ -71,16 +71,16 @@
             padding: 10px 0;
 
             & h2{
-                font-size: 14px;
+                font-size: 20px;
             }
 
             & p{
-                display: none;
+               display: none;
             }
 
             & a{
-                padding: 2px 7px;
-                font-size: 10px;
+                padding: 8px 15px;
+                font-size: 12px;
             }
         }
     }

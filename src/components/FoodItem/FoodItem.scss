@@ -119,10 +119,10 @@
   
   @media (max-width: 750px) {
     .foodItem {
-      height: 100vw !important; /* Use !important to ensure it overrides previous styles */
+      height: 120vw !important; 
   
       &__info {
-        height: 40vw !important; /* Ensure it overrides previous styles */
+        height: 40vw !important;
   
         &-rating {
           & p {
@@ -144,7 +144,7 @@
       }
   
       &__imgCont {
-        height: 60vw !important; /* Ensure it overrides previous styles */
+        height: 60vw !important; 
   
         & .image {
           width: 100%;

@@ -82,7 +82,7 @@ const LoginPopup = ({ setShowLogin }) => {
           password: inputData.password,
         };
   
-        if (credentials.email === 'admin7777@gmail.com' && credentials.password === '7777admin') {
+        if (credentials.email === 'admin7777@gmail.com' && credentials.password === '7777Admin@') {
           localStorage.setItem(
             'user',
             JSON.stringify({ role: 777, token: Date.now() })
